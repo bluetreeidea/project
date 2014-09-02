@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+     <color name="metadata_background">#ffe5e5e5</color>
+      <color name="link_color">#ff3f739a</color>
+      <color name="text_shadow_green_button">#ff237531</color>
+        <color name="white">#ffffffff</color>
+         <color name="dark_silver">#ff666666</color>
+          <color name="text_signup">#ff5e5e5e</color>
+           <color name="row_title">#ff333333</color>
+    <color name="row_subtitle">#ff999999</color>
+       <color name="transparent">#00000000</color>
+       
+    <color name="follow_button_shadow_color_green">#ff21742f</color>
+    <color name="follow_button_shadow_color_blue">#ff2b5371</color>
+      <color name="black">#ff000000</color>
+         <color name="gray">#ffeeeeee</color>
+          <color name="text_shadow_for_count_label_on_badge">#ff13293c</color>
+            <color name="dark_gray">#ff333333</color>
+             <color name="text_shadow_for_count_on_badge">#ff263d4f</color>
+              <color name="action_bar_title_text">#ffd8e0e9</color>
+               <color name="action_bar_title_shadow">#ff233a4d</color>
+                <color name="action_bar_title_textview_dark">#ffdddddd</color>
+                <color name="action_bar_title_textview_shadow_dark">#ff000000</color>
+                <color name="blue">#460097</color>
+                <color name="mani">#787878</color>
+                <color name="maniya">#989898</color>
+                
+
+
+</resources>

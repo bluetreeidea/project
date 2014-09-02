@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+<FrameLayout
+    
+    android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         >
+        <ImageView
+            android:id="@+id/images"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/logo_s" />
+
+        <ImageView
+            android:id="@+id/camera"
+            android:layout_width="30dp"
+            android:layout_height="28dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="15dip"
+           android:layout_marginTop="10dip"
+            android:scaleType="fitCenter"
+            android:src="@drawable/stop_play" />
+
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="85dip"
+            android:scaleType="fitCenter"
+            android:src="@drawable/search_icon" />
+
+        </FrameLayout>
+
+<FrameLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+    
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="42dp"
+            android:background="#3A3535"
+            android:scaleType="fitXY"
+            android:showDividers="none"
+            android:tabStripEnabled="false" >
+
+            <!--
+        <ImageView
+                android:id="@+id/fed"
+                android:scaleType="fitXY"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/feed_hv" />
+
+        <ImageView 
+            android:id="@+id/activ"
+            android:scaleType="fitXY"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/activity"
+            />
+        <ImageView 
+            android:id="@+id/exp"
+            android:scaleType="fitXY"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/explore"
+            />
+
+        <ImageView
+            android:id="@+id/pro"
+            android:layout_width="84dp"
+            android:scaleType="fitXY"
+            android:layout_height="wrap_content"
+            android:src="@drawable/profile" />
+            -->
+
+        </TabWidget>
+          
+        
+
+        <ImageView
+            android:id="@+id/trans"
+            android:layout_width="fill_parent"
+            android:layout_height="42dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/transparent" />
+
+     </FrameLayout>
+<FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:background="#e5e5df" >
+        
+     </FrameLayout>
+    </LinearLayout>
+
+</TabHost>

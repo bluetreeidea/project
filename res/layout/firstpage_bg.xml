@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_image"
+    android:orientation="vertical" >
+
+       <VideoView
+           android:id="@+id/VideoView"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentBottom="true"
+           android:layout_alignParentLeft="true"
+           android:layout_alignParentRight="true"
+           android:layout_alignParentTop="true"
+           android:layout_gravity="center"
+           android:scaleType="fitXY" >
+
+</VideoView>
+
+    <ImageView
+        android:id="@+id/logo_img"
+        android:layout_width="165dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/logosedio" />
+
+    <Button
+        android:id="@+id/Button01"
+        android:layout_width="280dp"
+        android:layout_height="42dp"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_below="@+id/logo_img"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="164dp"
+        android:background="@drawable/twitter_signin" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="280dp"
+        android:layout_height="42dp"
+        android:layout_below="@+id/Button01"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/facebook_login" />
+
+    <Button
+        android:id="@+id/login_newBtn"
+        android:layout_width="280dp"
+        android:layout_height="42dp"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/email_signup" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/login_newBtn"
+        android:layout_below="@+id/login_newBtn"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="26dp"
+        android:text="Already have an Account? " />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_toRightOf="@+id/textView1"
+        android:onClick="sigininpage"
+        android:text="Sign in now."
+        android:textStyle="bold" />
+
+</RelativeLayout>

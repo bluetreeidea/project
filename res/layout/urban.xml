@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical" >
+  
+  <!-- Screen Design for Photos -->
+  <FrameLayout
+        android:id="@+id/frameLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:scaleType="fitXY" >
+
+<ImageView
+            android:id="@+id/images"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/uranchb" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="14dp"
+            android:layout_height="16dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/chennalback" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/iurban" />
+        
+           <ImageView
+            android:id="@+id/camera"
+            android:layout_width="30dp"
+            android:layout_height="28dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="10dip"
+            android:scaleType="fitCenter"
+            android:src="@drawable/camerac" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="55dp"
+                android:layout_marginTop="1dp"
+                android:text="Urban"
+                android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="124dp" />
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/frameLayout1"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

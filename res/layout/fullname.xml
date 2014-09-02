@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f9f9f9"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/frameLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:scaleType="fitXY" >
+
+        <ImageView
+            android:id="@+id/Sedio"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/sedio_header" />
+
+        <ImageView
+            android:id="@+id/signin"
+            android:layout_width="60dp"
+            android:layout_height="37dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="10dip"
+            android:scaleType="fitCenter"
+            android:src="@drawable/next" />
+        
+        
+           <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="20dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="19dp"
+            android:src="@drawable/back_btn" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="42dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/logo_icon" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="20dp"
+            android:text="Sign Up"
+            android:textAppearance="?android:attr/textAppearanceMedium" 
+            />
+       
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/edit_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/profile"
+        android:layout_alignTop="@+id/profile"
+        android:scaleType="fitStart"
+        android:src="@drawable/edit" />
+
+    <EditText
+        android:id="@+id/edit_fullname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="Enter your fullname   " 
+        android:maxLines="1"
+        android:background="@drawable/edit_text_design"
+        android:gravity="center"
+        android:singleLine="true"
+        android:maxLength="32"
+         />
+
+    <ImageView
+        android:id="@+id/profile"
+        android:layout_width="94dp"
+        android:layout_height="92dp"
+        android:layout_below="@+id/frameLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bulb" />
+
+</RelativeLayout>

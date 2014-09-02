@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="text_size_large_button">16.0dip</dimen>
+    <dimen name="form_padding">10.0dip</dimen>
+    <dimen name="row_feed_photo_padding">10.0dip</dimen>
+    <dimen name="large_profile_pic">69.0dip</dimen>
+    <dimen name="action_bar_height">49.0dip</dimen>
+    <dimen name="action_bar_title_left_padding">13.0dip</dimen>
+    <dimen name="action_bar_title_top_padding">10.0dip</dimen>
+    <dimen name="action_bar_title_adjust_top_padding">8.0dip</dimen>
+    <dimen name="action_bar_title">20.0dip</dimen>
+    <dimen name="action_bar_title_right_padding">10.0dip</dimen>
+    <dimen name="ss">21dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+</resources>

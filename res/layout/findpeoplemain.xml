@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+<FrameLayout
+    android:layout_width="wrap_content"
+    android:layout_height="48dp" >
+
+        <ImageView
+            android:id="@+id/images"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/sedio_header" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="20dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/back_btn" />
+
+        <ImageView
+            android:id="@+id/ImageView01"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/logo_icon" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="15dp"
+            android:text="Find People"
+                android:textColor="#ffffff"
+            
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+</FrameLayout>
+
+<FrameLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="43dp"
+            android:background="#3A3535"
+            android:scaleType="fitXY"
+            android:showDividers="none"
+            android:tabStripEnabled="false" >
+        </TabWidget>
+
+        </FrameLayout>
+<FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:background="#e5e5df" >
+        
+     </FrameLayout>
+    </LinearLayout>
+
+</TabHost>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="#ffffff" >
+  
+  <!-- Screen Design for Photos -->
+
+    <ImageView
+        android:id="@+id/ImageView02"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="220dp"
+        android:src="@drawable/inviteviatextbutton" />
+
+    <ImageView
+        android:id="@+id/ImageView01"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="0dp"
+        android:src="@drawable/inviteviaemailbutton" />
+
+    <ImageView
+        android:id="@+id/ImageView03"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="0dp"
+        android:src="@drawable/searchforpeoplebutton" />
+ 
+</LinearLayout>

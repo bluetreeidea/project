@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/camera_framelayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        android:id="@+id/camera_preview_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        
+        android:layout_gravity="center" >
+    </FrameLayout>
+    
+   
+    
+    <VideoView android:id="@+id/video_preview_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginLeft="0dp" >
+    </VideoView>
+
+    <LinearLayout
+        android:id="@+id/camera_portrait_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="#17151A" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="0dp"
+                android:background="#17151A"
+                android:padding="0dp"
+                android:progress="0"
+                android:progressDrawable="@drawable/greenprogress" />
+
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="50dp"
+                android:layout_height="47dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/close" />
+            
+            <Button
+                android:id="@+id/went_button"
+                android:layout_width="20dp"
+                android:layout_height="27dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/left_arrow" />
+
+             <Button
+                 android:id="@+id/go_button"
+                 android:layout_width="20dp"
+                 android:layout_height="27dp"
+                 android:layout_alignParentRight="true"
+                 android:layout_alignParentTop="true"
+                 android:layout_marginRight="8dp"
+                 android:layout_marginTop="10dp"
+                 android:background="@drawable/right_arrow" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/video_preview_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="12dp" >
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#17151A" />
+
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="76dp"
+                android:background="#17151A" />
+
+            <Button
+                android:id="@+id/next_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_above="@+id/progressBar1"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/red_tick" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</FrameLayout>
