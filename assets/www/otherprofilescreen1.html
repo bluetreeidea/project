@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Profilepage</title>
+      <script type="text/javascript" charset="utf-8" src="cordova-2.7.0.js"></script>
+            <script type="text/javascript" charset="utf-8"></script>
+            <script src="jquery.min.js" type="text/javascript"></script>
+              <script src="jquery-1.9.1.js"></script>
+             <script type="text/javascript" charset="utf-8" src="jsOAuth.min.js"></script>
+            <script src="facebook_js_sdk.js"></script>
+              <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+            <script src="cdv-plugin-fb-connect.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146052-10']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar" onload="profile()">
+
+    <!-- Top menu -->
+    
+   <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+         
+        
+			<div class="row-fluid">
+            <div class="span12">
+            <div class="header">
+            <div class="header_left">
+            <div class="span6">
+           <a href="javascript:void(0);"><img src="assets/img/logo_s.png"></a>
+            </div>
+            </div>
+            <div class="header_right">
+            <div class="span6">
+            <ul>
+            <li>
+            <!--<a href="javascript:void(0);"> <img src="assets/img/search_icon.png"> </a>-->
+            </li>
+            <li>
+            <!--<a href="javascript:void(0);"> <img src="assets/img/stop_play.png"> </a>-->
+            </li>            
+            </ul>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+          
+          
+        </div>
+      </div>
+    </div>
+    
+    <!-- Top menu -->
+    
+    <!-- sub menu -->
+
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span12">
+<div class="back_button">
+         <a href="javascript:void(0);"><img src="assets/img/back1.png" id="backbtn" onclick="back()"></a>
+         </div>
+
+</div>
+</div>
+</div>
+<div id="profile_entire">
+    <!-- sub menu -->
+    
+	<!-- user profile -->    
+    <div id="profile_div"><!-- 
+<div class="container-fluid user_profile">
+<div class="row-fluid">
+<div class="span12">
+<div class="user_profile_img">
+<p> <img src="assets/img/user_pro.png"> </p>
+<p> john smith</p>
+</div>
+<div class="user_profile_cont">
+<p> Working at Arecent Technologies as Project
+Manager... Friendly problem solver. 
+Thinker.Dancer. Internet evangelist. 
+Hardcorewebaholic and more 
+Madurai, Tamil Nadu, India. </p>
+<div class="follower">
+<p> <span> '+item.followers+' </span> Followers <span> '+item.following+' </span> Following </p>
+</div>
+<div class="find_people_but">
+<p> <a href="#"> <img src="assets/img/find_people.png"> </a> </p>
+</div>
+</div>
+</div>
+</div>
+</div>    
+    
+<div class="container-fluid post_like">
+<div class="row-fluid">
+<div class="span12">
+<div class="post">
+<p> <span> '+item.posts+' </span> posts </p>
+</div>
+<div class="like">
+<p class="menu_active"> <span> '+item.likes+' </span> likes </p>
+</div>
+</div>
+</div>
+</div>     -->
+    </div>
+    <!-- main content -->	
+  
+<div id=pro_post> </div>
+
+
+<div id=pro_like> </div>
+</div>
+<div id="loader">
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+              
+                      
+               <center> <img src="assets/img/loader.gif" width="30" height="30"> </center>
+             
+               <br>
+               <br>
+             
+            
+               
+</div>
+    
+    <!-- main content -->
+    
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/bootstrap-affix.js"></script>
+
+    <script src="assets/js/holder/holder.js"></script>
+    <script src="assets/js/google-code-prettify/prettify.js"></script>
+
+    <script src="assets/js/application.js"></script>
+
+
+    <!-- Analytics
+    ================================================== -->
+    <script>
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+      
+                  // var Liveurl = window.localStorage.getItem("liveurl");
+                    var Liveurl ='http://demo.cogzideltemplates.com/client/vine-clone/';
+                  var others='';
+                  
+                  var userid=getValue("user_id");
+                  var otherid=getValue("other_id");
+      
+      function profile()
+      {
+      //window.localStorage.setItem("backvalue" , '3');
+            		$('#loader').show();
+            		  $('#pro_like').hide();
+  						$('#pro_post').hide();
+                    $('#profile_entire').hide();
+                    
+      if(getValue("profile_back")==3)
+      {
+      alert("Like Function")
+      var profile_detail=''+Liveurl+'feed/profile?user_id='+getValue("user_id")+'&other_user_id='+getValue("other_id");
+       //var profile_details=''+Liveurl+'mobile/view_profile?user_id='+getValue("user");
+      
+      
+      	             $.getJSON(profile_detail, function(data){
+                      
+                      $.each(data, function(i, item){
+                       				 var follo=item.followers;
+                               /*     
+                                var followimage;
+                                     
+                                    if(getValue("user_id")==getValue("other_id"))  
+                                     {
+                                     followimage="";
+                                     }
+                                     else if(follo=='No'|| follo==''|| follo== null)
+                                     {
+                                     followimage="assets/img/unfollow.png";
+                                     }
+                                     else
+                                     {
+                                     followimage="assets/img/follow.png";
+                                     }  */
+                                     
+                                var followimage;
+                                     
+                                if(userid==otherid)        
+                                     
+                                     {
+                                      followimage="";
+                                     
+                                     }
+                                     
+                               else if(item.follow_status=="UnFollow")  
+                                
+                                
+                                  followimage="assets/img/follow.png";
+                                 
+                                 
+                                 else
+                                 
+                                    followimage="assets/img/unfollow.png";
+                                 
+                                 
+                                 
+                                     
+                   
+                                     var profile='<div class="container-fluid user_profile"><div class="row-fluid"><div class="span12"><div class="user_profile_img"><p> <img src="'+item.profile_image+'" onclick="profile_detail()"> </p><p>'+item.fullname+'</p></div><div class="user_profile_cont"  id="followerlabel"><div class="follower" ><p> <span id="follow">'+item.followers+'</span> Followers  <span id="chfollower_'+getValue("user_id")+'"> '+item.following+' </span> Following </p></div><div class="find_people_but"><p> <a href="javascript:void(0);"><div class="follow_bg"><img src="'+followimage+'" id="followbutton_'+getValue("user_id")+'" onclick="followotheruser('+getValue("other_id")+','+getValue("user_id")+','+item.followers+')"  /> <img src="assets/img/find_people.png"> </a> </p></div></div></div></div></div></div>          <!-- user profile -->    <div class="container-fluid post_like" ><div class="row-fluid"><div class="span12"><div class="post" onclick="fun_post()"><p id="post_active"> <span> '+item.posts+' </span> posts </p></div><div class="like" onclick="fun_like()"><p> <span> '+item.likes+' </span> likes </p></div></div></div></div>';
+                                                      
+                                                          $("#profile_div").append(profile);
+                                                       
+                        fun_like();
+                                  
+                             });
+                          });    
+           
+                                                                $("#profile_div").empty();
+      
+      
+      
+      
+      }
+      else
+      {     
+      
+      var profile_detail=''+Liveurl+'feed/profile?user_id='+getValue("user_id")+'&other_user_id='+getValue("other_id");
+   
+   //   var profile_detail=''+Liveurl+'feed/profile?user_id='+getValue("other_id");
+      //var profile_details=''+Liveurl+'mobile/view_profile?user_id='+getValue("user");
+      
+      	             $.getJSON(profile_detail, function(data){
+                      
+                      $.each(data, function(i, item){
+                       
+                             var follo=item.followers;
+                              var followimage='';
+                                     
+                          if(getValue("user_id")==getValue("other_id"))        
+                                     
+                                     {
+                                      followimage="";
+                                     
+                                     }
+                                     
+                               else if(item.follow_status=="UnFollow")  
+                                
+                                
+                                  followimage="assets/img/follow.png";
+                                 
+                                 
+                                 else
+                                 
+                                    followimage="assets/img/unfollow.png";
+                                 
+                                  
+                                 
+                                     
+                                   /*  if(getValue("user_id")==getValue("other_id"))  
+                                     {
+                                     followimage="";
+                                     }
+                                     else if(follo=='No'|| follo==''|| follo== null)
+                                     {
+                                     followimage="assets/img/unfollow.png";
+                                     }
+                                     else
+                                     {
+                                     followimage="assets/img/follow.png";
+                                     } 
+                                     
+                                     */
+                        
+                                     
+                                     var profile='<div class="container-fluid user_profile"><div class="row-fluid"><div class="span12"><div class="user_profile_img"><p> <img src="'+item.profile_image+'" onclick="profile_detail()"> </p><p>'+item.fullname+'</p></div><div class="user_profile_cont"  id="followerlabel"><div class="follower" ><p> <span id="follow">'+item.followers+'</span> Followers  <span id="chfollower_'+getValue("user_id")+'"> '+item.following+' </span> Following </p></div><div class="find_people_but"><p> <a href="javascript:void(0);"><div class="follow_bg"><img src="'+followimage+'" id="followbutton_'+getValue("user_id")+'" onclick="followotheruser('+getValue("other_id")+','+getValue("user_id")+','+item.followers+')"  /> <img src="assets/img/find_people.png"> </a> </p></div></div></div></div></div></div>          <!-- user profile -->    <div class="container-fluid post_like" ><div class="row-fluid"><div class="span12"><div class="post" id="on_post" onclick="fun_post()"><p> <span> '+item.posts+' </span> posts </p></div><div class="like" id="on_like" onclick="fun_like()"><p> <span> '+item.likes+' </span> likes </p></div></div></div></div>';
+                                                      
+                                                          $("#profile_div").append(profile);
+                                                       
+                        fun_post();
+                                  
+                             });
+                          });    
+           
+                                                                $("#profile_div").empty();
+           }
+                       	$('#profile_entire').show();
+           
+                // $("#loader").delay(1500).fadeOut();
+           
+      }
+      function explore()
+      {
+                    window.location.href='explorescreen.html?user_id='+getValue("user_id");     
+      
+      }
+       function home()
+      {
+      
+              window.location.href='homescreen.html?user_id='+getValue("user_id");     
+      
+      
+      }
+      
+      function getValue(varname)
+                {
+                    var url = window.location.href;
+                    var qparts = url.split("?");
+                    
+                    if (qparts.length == 1)
+                    {
+                        return "";
+                    }
+                    else{
+                        var query = qparts[1];
+                        var vars = query.split("&");
+                        var value = "";
+                        for (i=0;i<vars.length;i++)
+                        {
+                            var parts = vars[i].split("=");
+                            if (parts[0] == varname)
+                            {
+                                value = parts[1];
+                                break;
+                            }
+                        }
+                        value = unescape(value);
+                        
+                        value.replace(/\+/g," ");
+                        return value;
+                    }
+                    
+                }
+                
+                
+                
+ function fun_post()
+{
+
+ $('#on_post').css('background-color','white');
+$('#on_like').css('background-color','#E3E3E3');
+
+  $('#pro_like').hide();
+  $('#pro_post').show();
+  $('#loader').show();
+  
+  
+  		           
+  		           var posts=''+Liveurl+'feed/posts?user_id='+getValue("other_id");
+  		           
+  		           
+              				             $.getJSON(posts, function(data){
+                      
+                      $.each(data, function(i, item){
+                      
+                      if(item.status!='Have No Feeds')
+                      {
+                      
+                      if(item.liked==1)
+                      {
+                      
+                         var likeimage='assets/img/smile-hv.png';
+                        }
+                        else
+                        {
+                          var likeimage='assets/img/smiley.png';  
+                        }
+                   if(item.vined==1)
+                        {
+                        var vineimage='assets/img/suffle-hv.png';
+                        }
+                        else
+                        {
+                          var vineimage='assets/img/shuffle.png';  
+                        }           
+                          var back_value1=3;
+
+      var post='<div class="container"><div class="row-fluid"><div class="span12"><div class="big_img"><img src="'+item.video_name+'"></div><div class="span12 user1"><div class="user_img"><img src="'+item.video_owner_profile_image+'" onclick="profile1('+item.user_id+','+userid+','+5+')"></div><div class="user_right"><div class="user_detail"><p class="user_name"> '+item.video_owner_name+' <span> '+item.video_created_date+' </span> </p><p> <span class="competition"> '+item.channel+' </span> #'+item.title+' </p><p></p></div><div class="member_like"><p> <span id="chlike_'+item.video_id+'">'+item.total_like+' </span> likes </p></div><div class="comment_detail"><p class="revine"> <span id="chvine_'+item.video_id+'"> '+item.total_vine+' </span> resedio </p><div class="comment_but"><div class="comment_but_left"><ul><li style="padding:0;"> <a href="javascript:void(0);"> <img id="likebutton_'+item.video_id+'" src="'+likeimage+'" onclick="fun_likebt('+item.video_id+')">   </a> </li><li style="padding:0 5px 0 15px!important;"><img id="vinebutton_'+item.video_id+'" src="'+vineimage+'" onclick="fun_vinebt('+item.video_id+')"></li><li> <a href="javascript:void(0);"> <img src="assets/img/comment.png" onclick="fun_profile_comment('+getValue("user")+','+item.video_id+','+2+')"> </a> </li></ul></div><div class="comment_but_right"><a href="javascript:void(0);"> <img src="assets/img/grey_square_but_3.png" onclick="moreoption('+item.video_id+')"> </a></div></div></div></div></div></div></div></div>';
+
+                         
+                         
+                           $("#pro_post").prepend(post);
+                                    
+                      }
+                      else
+                      {
+                          
+                        //  alert("No Feed");
+                          
+                              var like='<br><br><br><br><br><br><b> No Feeds<br><br><br><br>';
+                         
+                         
+                          $("#pro_post").prepend(like);
+                     
+                     
+                      }
+                      
+                              });
+                      });
+               $('#loading').hide();
+               
+                          $("#pro_post").empty();
+  
+                          $("#loader").delay(1500).fadeOut();
+                             
+  
+  }
+  function fun_like()
+  {
+  $('#on_post').css('background-color','#E3E3E3');
+$('#on_like').css('background-color','white');
+$('#loader').show();
+
+  $('#pro_like').show();
+  $('#pro_post').hide();
+  
+  
+  var likeposturl=''+Liveurl+'feed/like_page?user_id='+getValue("other_id");
+  $.getJSON(likeposturl, function(data){
+                      
+                      $.each(data, function(i, item){
+                      
+                                    
+                      
+                    if(item.status!="Have No Feeds")
+                      {
+                      
+                        if(item.liked==1)
+                      {
+                      
+                         var likeimage='assets/img/smile-hv.png';
+                        }
+                        else
+                        {
+                          var likeimage='assets/img/smiley.png';  
+                        }
+                   if(item.vined==1)
+                        {
+                        var vineimage='assets/img/suffle-hv.png';
+                        }
+                        else
+                        {
+                          var vineimage='assets/img/shuffle.png';  
+                        }           
+                      
+                  var back_value1=3;
+                      
+      var like='<div class="container"><div class="row-fluid"><div class="span12"><div class="big_img"><img src="'+item.video_name+'"></div> <div class="span12 user1"><div class="user_img"><img src="'+item.video_owner_profile_image+'" onclick="profile1('+item.user_id+','+userid+','+5+')"></div><div class="user_right"><div class="user_detail"><p class="user_name"> '+item.video_owner_name+' <span> '+item.created+' </span> </p><p> <span class="competition"> '+item.channel+' </span> #'+item.title+' </p><p></p></div><div class="member_like"><p> <span id="chlike1_'+item.video_id+'">'+item.total_like+' </span> likes </p></div><div class="comment_detail"><p class="revine"> <span id="chvine1_'+item.video_id+'"> '+item.total_vine+' </span> resedio</p><div class="comment_but"><div class="comment_but_left"><ul><li style="padding:0;"> <a href="javascript:void(0);"> <img id="likebutton1_'+item.video_id+'" src="'+likeimage+'" onclick="fun_likebt1('+item.video_id+')"> </a></li><li><img id="vinebutton1_'+item.v_id+'" src="'+vineimage+'" onclick="fun_vinebt1('+item.video_id+')"></li><li> <a href="javascript:void(0);"> <img src="assets/img/comment.png" onclick="fun_profile_comment('+getValue("user")+','+item.video_id+','+2+')"> </a> </li></ul></div><div class="comment_but_right"><a href="javascript:void(0);"> <img src="assets/img/grey_square_but_3.png" onclick="moreoption('+item.video_id+')"> </a></div></div></div></div></div></div></div></div>';
+                         
+                         
+                           $("#pro_like").prepend(like);
+                           
+                     }
+                      else
+                      {
+                                           
+                     
+                                  
+                     
+                     var like='<br><br><br><br><br><br><b> No Feeds<br><br><br><br>';
+                         
+                         
+                          $("#pro_like").prepend(like);
+                     
+                     
+                      }
+                      
+                             
+                      
+                              });
+                             
+                      });
+                      
+                        $('#loading').hide();
+                      
+                   
+        $("#pro_like").empty();
+                            $("#loader").delay(1500).fadeOut();
+                      
+  }
+  
+  
+  
+  
+   function fun_likebt(like)
+  {
+  
+  var like1='#chlike_'+like;
+  
+  var like2='#likebutton_'+like;
+  
+  
+        var profileimage=$(like2).attr('src');
+        
+
+   if(profileimage=='assets/img/smile-hv.png')
+       $(like2).attr('src','assets/img/smiley.png');
+   else    
+      $(like2).attr('src','assets/img/smile-hv.png');
+
+      
+     var likeurl=''+Liveurl+'feed/likefun?v_id='+like+'&user_id='+getValue("user_id");
+              $.getJSON(likeurl, function(data){
+                      
+                      $.each(data, function(i, item){
+                      
+                              
+                       $(like1).text(item.total_like); 
+                      
+                      
+                              });
+                      });
+                      
+
+  }        
+  
+   function fun_likebt1(like)
+  {
+  
+  var like1='#chlike1_'+like;
+  
+  var like2='#likebutton1_'+like;
+  
+  
+        var profileimage=$(like2).attr('src');
+        
+
+   if(profileimage=='assets/img/smile-hv.png')
+       $(like2).attr('src','assets/img/smiley.png');
+   else    
+      $(like2).attr('src','assets/img/smile-hv.png');
+
+      
+     var likeurl=''+Liveurl+'feed/likefun?v_id='+like+'&user_id='+getValue("user_id");
+     
+              $.getJSON(likeurl, function(data){
+                      
+                      $.each(data, function(i, item){
+                      
+                              
+                       $(like1).text(item.total_like); 
+                      
+                      
+                              });
+                      });
+                      
+
+  }        
+  
+  
+    function fun_vinebt(vine)
+  {
+  
+  var vine1='#chvine_'+vine;
+  
+  var vine2='#vinebutton_'+vine;
+  
+
+        var profileimage=$(vine2).attr('src');
+        
+     
+ if(profileimage=='assets/img/suffle-hv.png')
+       $(vine2).attr('src','assets/img/shuffle.png');
+   else    
+      $(vine2).attr('src','assets/img/suffle-hv.png');
+      
+     var vineurl=''+Liveurl+'feed/vine?v_id='+vine+'&user_id='+getValue("user_id");
+     $.getJSON(vineurl, function(data){
+                      
+                      $.each(data, function(i, item){
+                      
+                       $(vine1).text(item.total_vine); 
+                      
+                      
+                              });
+                      });
+                      
+
+   //var posts=''+Liveurl+'feed/get_feed?user_id='+getValue("user_id");
+  var posts=''+Liveurl+'feed/posts?user_id='+getValue("user_id");
+  		           
+  		           
+              				             $.getJSON(posts, function(data){
+                      
+                      $.each(data, function(i, item){
+                      
+                     
+                       if(vine==item.v_id)
+                        {
+                        
+                                       $(vine1).text(item.total_vine);                  
+                        } 
+                      
+                                 });
+                             
+                      });  
+  } 
+  
+  
+   function fun_vinebt1(vine)
+  {
+  
+  var vine1='#chvine1_'+vine;
+  
+  var vine2='#vinebutton1_'+vine;
+  
+
+        var profileimage=$(vine2).attr('src');
+        
+     
+
+
+   if(profileimage=='assets/img/suffle-hv.png')
+       $(vine2).attr('src','assets/img/shuffle.png');
+   else    
+      $(vine2).attr('src','assets/img/suffle-hv.png');
+
+      
+    var vineurl=''+Liveurl+'feed/vine?v_id='+vine+'&user_id='+getValue("user_id");
+              $.getJSON(vineurl, function(data){
+                      
+                      $.each(data, function(i, item){
+                      
+                       $(vine1).text(item.total_vine); 
+                      
+                      
+                              });
+                      });
+                      
+
+    var posts=''+Liveurl+'feed/get_feed?user_id='+getValue("user_id")+'&fb_token='+getValue("fb_token");
+  		           
+  		           
+              				             $.getJSON(posts, function(data){
+                      
+                      $.each(data, function(i, item){
+                      
+                     
+                        if(vine1==item.v_id)
+                        {
+                        
+                                       $(vine1).text(item.total_vine);                  
+                        }
+                      
+                                 });
+                             
+                      }); 
+
+  } 
+  
+  
+        function fun_profile_comment(userid,vid,backvalue)
+  {
+  Android.showToast();
+    // window.location.href='commentscreen.html?user_id='+userid+'&v_id='+vid+'&back_value='+backvalue;
+ 
+  
+  } 
+
+ /* function profile_detail()
+  {
+  window.location.href='Profile_detail_screen.html?user_id='+getValue("user");
+  
+  } */ 
+  
+  /* function followotheruser(userid,owner,followcheck)
+                {
+                    if(document.getElementById("folimage").getAttribute('src')=="assets/img/follow.png")
+                    {
+                        document.getElementById("folimage").src="assets/img/unfollow.png";
+                        alert(''+Liveurl+'mobile/follow?user_id='+owner+'&following_user_id='+userid);
+                        $.getJSON(''+Liveurl+'mobile/follow?user_id='+owner+'&following_user_id='+userid,function(data){
+                                  $.each(data,function(i,item){
+                                  alert(item.status);
+                                         document.getElementById("followerlabel").innerHTML='<p>FOLLOWERS</p><center>'+item.followers+'</center>';
+                                         });});
+                    }
+                    else
+                    {
+                        document.getElementById("folimage").src="assets/img/follow.png";
+                        alert(''+Liveurl+'mobile/follow?user_id='+owner+'&following_user_id='+userid);
+                        $.getJSON(''+Liveurl+'mobile/follow?user_id='+owner+'&following_user_id='+userid,function(data){
+                                  $.each(data,function(i,item){
+                                         document.getElementById("followerlabel").innerHTML='<p>FOLLOWERS</p><center>'+item.followers+'</center>';
+                                         });});
+                    }
+                }  */
+                
+               
+               
+      function followotheruser(userid,owner,followw)
+                {
+                 var like1='#chfollower_'+owner;
+  
+       var like2='#followbutton_'+owner;
+      var followcount=parseInt(document.getElementById('follow').innerHTML);
+      var profileimage=$(like2).attr('src');
+       var followimage; 
+
+alert(like2);        
+alert(profileimage);
+  if(profileimage=='assets/img/unfollow.png')
+  
+      $(like2).attr('src','assets/img/follow.png');
+   
+   else    
+      
+      $(like2).attr('src','assets/img/unfollow.png');
+ 
+    
+    
+     
+     var likeurl=''+Liveurl+'mobile/follow?user_id='+userid+'&following_user_id='+owner;
+     //alert(userid);
+     
+              $.getJSON(likeurl, function(data){
+                      
+                      $.each(data, function(i, item){
+                  
+                       
+                          //alert(item.status);  
+                          //alert(item.followers);
+                          
+                           if(item.status=='Follow')
+                           
+                        
+                       var a=parseInt(followcount)+1;
+                      
+                      
+                         else
+                   
+                       var a=followcount - 1;
+                       
+                       userid
+                     document.getElementById('follow').innerHTML=a;
+                          
+                          //$(like1).text(item.followers); 
+                   
+                          
+                                              
+                              }); 
+                      });userid
+                      
+
+  }         
+  function profile1(userid,owner,backvalue)
+  {
+  
+       window.location.href='otherprofilescreen.html?other_id='+userid+'&user_id='+owner+'&back_value='+backvalue;
+  
+  
+  }    
+  
+  
+            function back()
+            {
+         
+         window.location.href='explorescreen.html?user_id='+getValue("user_id");
+        
+            
+             /* var g=window.localStorage.getItem("backvalue");
+                    var img = document.getElementById('backbtn');
+                    img.style.visibility = 'hidden';
+                    if(g=='1')
+                    window.location.href='homescreen.html?user_id='+getValue("user_id");
+                    else if(g=='2')
+                   window.location.href='profilescreen.html?user_id='+getValue("user_id");
+                    else
+                    profile(); */
+            
+            }
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,526 @@
+<html>
+<Head>
+<title>
+
+Vine Clone
+
+  </title>
+  <script type="text/javascript" charset="utf-8" src="cordova-2.7.0.js"></script>
+            <script type="text/javascript" charset="utf-8"></script>
+            <script src="jquery.min.js" type="text/javascript"></script>
+              <script src="jquery-1.9.1.js"></script>
+             <script type="text/javascript" charset="utf-8" src="jsOAuth.min.js"></script>
+            <script src="facebook_js_sdk.js"></script>
+              <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+            
+  </Head>
+  
+<body onload="load()"><Center><br><br>
+ <img src="assets/img/back_but.png" onclick="back();" width="60" height="35"><br><br>
+<div id="profile_details">
+
+<h3> Settings</h3>
+
+
+  <div id="imagediv" class="feed_profile">
+  <a href="#" class="edit"><img src="assets/img/edit.png" onclick="showConfirm();"></a>
+  <img src="" id="pimage" width="130" height="100" onclick="showConfirm();>
+  </div>
+
+<!-- <div id="imagediv" class="pos_rel">
+<img src="" id="pimage">
+</div>
+   -->
+<br><br>
+<label>Fullname</label><input type="text" id="txtusername"><br>
+<label>Few words about you</label><input type="text" id="txtfewords"><br>
+<label>Location</label><input type="text" id="txtlocation"><br>
+<label>E-Mail</label><input type="text" id="txtemail"><br>
+<label>Phone</label><input type="text" id="txtphone"><br>
+<label>Posts are Private</label> :<label id="post_private" onclick="fun_private()"></label><br>
+<label>Posts are sensitive</label> :<label id="post_sensitive" onclick="fun_sensitive()"></label><br>
+<a onclick="reset_Password()">Reset Password </a><br>
+<label><a onclick="show_terms()">Terms of Service </a></label><br>
+<label><a onclick="show_privacy()">Privacy </a></label>
+<input type="button" id="logout" value="logout" onclick="logot()">
+
+<br><br> <input type="button" value="Save" onclick="save()"><br><br><br>
+
+</div>
+<div id="privacy">
+
+<input type="button" value="Back" onclick="back()"><br><br><br>
+<h3> Privacy</h3><br><br><br>
+		Want to scale new heights in business and explore uncharted territory in the Global market?
+We at Cogzidel Technologies Private Limited thoroughly understand this need. A leading professional web development company in India, Cogzidel offers you unparalleled expertise and extensive experience to not just get you started, but to give you that cutting edge advantage your online business needs to hit the ground running.
+
+To achieve this, you definitely donâ€™t need cookie cutter solutions. As an established custom Web design and development company, we specifically tailor our web-based solutions according to the exact requirements and unique preferences of every client. Our edge to edge online services include the following:
+Custom Web Design
+Project Consulting
+Social Media Consulting
+Custom Web Development
+Project Development
+Mobile Application Development
+Stuck at crossroads? Not sure where to start? Not a problem. We will guide you every step of the way, from concept, development and completion. Having been in operation for more than a decade, we have the technological capacity and know-how to deliver scalable services in web and mobile development. Whether you need an online portal, an eCommerce site, or website integrated with CMS and CRM, our highly proficient team of IT professionals can work and collaborate with you to propel your organization forward.
+So whatâ€™s gives us that strategic advantage? The people working behind Cogzidel not only know web development, but share the common intense passion for technology. In fact, our core team consists of seasoned professionals who are pioneers in the industry, having started their careers since the Internet boom days.
+This means, from the initial assessment of your project specifications, you can expect our developers to review every aspect of web development in order to ensure all possible challenges are met effectively. We donâ€™t just provide you an online presence to keep up with the competition, but get you the leverage to stay ahead of the pack.
+As well all know, the online world is fraught with cutthroat competition. As a widely recognized Web Development Company, the goal of Cogzidel is to consistently provide complete online solutions for every imaginable web requirement for its highly diverse client base.
+
+</div>
+<div id="terms_service">
+<input type="button" value="Back" onclick="back()"><br><br><br>
+
+<h3> Terms of Service</h3>
+<br><br><br>
+		These days, businesses constantly need to keep up with the ever changing trends and demands of consumers. For any entrepreneur, it is crucial to be a step ahead of the game. Otherwise, your competitors will leave you behind to bite the dust, so to speak. Definitely not an appealing thought.
+In the business world, its either you set the trend, or be among the first ones to aggressively ride the wave. Recently, mobile technology has taken precedence in the global market as more and more people require convenient access to the web while they are on the go. Gone are the days where work is solely confined to the four corners of the office.
+Today, you can close as deal in your pajamas, or conduct a corporate meeting in the Bahamas. Communication, online transaction and data access has become readily available using the latest mobile devices.
+Cogzidelâ€™s mobile application development services allow organizations to experience and take advantage of the unprecedented benefits of mobility. If clients today prefer to shop using their mobile devices, be in the forefront by offering them this convenience. We have delivered scalable mobile solutions for a variety of devices and platforms such as iPhone app development, Android app development as well as Windows mobile application development, among others. Now, you and your clients can enjoy real-time access to information anytime and anywhere using any device.
+We at Cogzidel understand business requirements contrast significantly. The need for custom and flexible mobile solutions become more prominent. We develop tailor-made value-added applications specifically designed to meet unique business requirements. This is because we believe that to be able to give our clients the kind of leverage to not only compete, but out rival any competitor in their industry. A â€œone size fits all solutionâ€� just doesnâ€™t cut it.
+Having catered to a wide variety of highly diverse organizations and across various industry verticals such as banking and finance, business sectors and retail, Cogzidel has quickly emerged as a recognized industry leader in mobile application development.
+We have proven expertise in the following mobile development services:
+iPhone App Development
+Android App Development
+Windows Mobile
+iPad development
+Android Tablet development
+You can hire our dedicated iPhone, iPad, Android, Android Tablet development team to build your tailor made mobile applications based on fixed or hourly hiring basis. Please contact us with your requirement and we will come back to you with a quote
+
+</div>
+<div id="resrpass">
+<input type="button" value="Back" onclick="back()"><br><br><br>
+<label> Email</label>
+<input><inputy ty="text" id="txtch_email">
+<input type="button" onclick="reset()"><br><br><br>>
+
+</div>
+</Center></body>
+<script type="text/javascript">
+       //var Liveurl = window.localStorage.getItem("liveurl");
+      
+       document.getElementB
+var re_email="";
+//var myid=window.localStorage.getItem("userprofile");
+
+var Liveurl ='http://demo.cogzideltemplates.com/client/vine-clone/';
+             var myid =getValue("user_id");
+function load()
+{
+ $("#profile_details").show();
+  $("#privacy").hide();
+  $("#terms_service").hide();
+  $("#resrpass").hide();
+  var pic=getValue("pp"); 
+  document.getElementById("pimage").src=pic;
+   $("#imagediv").show();
+var getuserdetail=''+Liveurl+'mobile/view_profile?user_id='+myid;
+
+
+     $.getJSON(getuserdetail, function(data){
+                      
+                      $.each(data, function(i, item){
+                      
+                     //  var pro_image='<img src="'+pic+'" id="pimage" width="130" height="100" onclick="showConfirm();">';
+                                                  //           $("#imagediv").append(pro_image);
+							var feword=item.few_words;
+						if(feword=='None')
+						    feword='';
+						    var location = item.location;
+						if(location=='None')
+						     location='';   
+						     var phone=item.phone_number;
+						      if(phone=="None")
+                                 phone="";                   
+                      $('#txtusername').val(item.fullname);
+                      $('#txtfewords').val(feword);
+                      $('#txtlocation').val(location);
+                      $('#txtemail').val(item.email);
+                      $('#txtphone').val(phone);
+                      re_email=item.email;
+                      										if(item.post_private==0)
+                      					                             $("#post_private").text("OFF");
+                      					                    else
+                      					                    		$("#post_private").text("ON");
+                      					                    
+                      					                    if(item.post_sensitive==0)                      					                    
+                      					                           $("#post_sensitive").text("OFF");       
+                      					                    else
+                      					                    	 $("#post_sensitive").text("ON");            
+                      
+                      
+                              });
+                      });
+
+
+}
+
+function show_privacy()
+{
+ $("#privacy").show();
+ $("#profile_details").hide();
+   $("#terms_service").hide();
+ $("#resrpass").hide();
+
+}
+
+function show_terms()
+{
+ $("#profile_details").hide();
+  $("#privacy").hide();
+    $("#terms_service").show();
+  $("#resrpass").hide();
+
+}
+
+function reset_Password()
+{
+    $("#resrpass").show();
+     $("#profile_details").hide();
+  $("#privacy").hide();
+    $("#terms_service").hide();
+  document.getElementById("#txtch_email").value=re_email;
+
+
+}
+
+function getValue(varname)
+                {
+                    var url = window.location.href;
+                    var qparts = url.split("?");
+                    
+                    if (qparts.length == 1)
+                    {
+                        return "";
+                    }
+                    else{
+                        var query = qparts[1];
+                        var vars = query.split("&");
+                        var value = "";
+                        for (i=0;i<vars.length;i++)
+                        {
+                            var parts = vars[i].split("=");
+                            if (parts[0] == varname)
+                            {
+                                value = parts[1];
+                                break;
+                            }
+                        }
+                        value = unescape(value);
+                        
+                        value.replace(/\+/g," ");
+                        return value;
+                    }
+                    
+                }
+              
+                
+              /*  function checkConnection() {
+        $('#loader').show();
+        $('#addimage').hide();
+        var networkState = navigator.network.connection.type;
+        if(networkState=='none')
+        {
+            navigator.notification.alert(
+                                         'No network connection on your phone',
+                                         alertDismissed,
+                                         'Warrning !',
+                                         'Ok'
+                                         );
+        }
+        else
+        {
+            feedpage();
+        }
+    } */
+               
+               
+                function save()
+                {
+    	
+    	     
+                   var avatar;             
+                  var username=$('#txtusername').val();
+                      var fewords=$('#txtfewords').val();
+                      var location=$('#txtlocation').val();
+                      var email=$('#txtemail').val();
+                      var phone=$('#txtphone').val();
+                      
+                      if(fewords=="")
+                          fewords="None";
+                       if(location=="")
+                          location="None";   
+                          if(phone=="")
+                           phone="None"; 
+                      										if($('#post_private').val()=='OFF')
+                      					                            var private='no';
+                      					                    else
+                      					                    		 var private='yes';
+                      					                    
+                      					                    if($("#post_sensitive").text()=='OFF')                      					                    
+                      					                           var sensitive='no';      
+                      					                    else
+                      					                    	 var sensitive='yes';  
+                      				                    	           
+                  
+                if(f==5)
+                  avatar=profile_picture;
+                 else
+                  avatar=getValue("pp");
+                
+                var saveprofile=''+Liveurl+'mobile/edit_profile?user_id='+myid+'&email='+email+'&fullname='+username+'&location='+location+'&profile_image='+avatar+'&phone_number='+phone+'&few_words='+fewords+'&your_contents_pri='+private+'&your_contents_sen='+sensitive;
+                               console.log(saveprofile);
+                 $.getJSON(saveprofile, function(data){
+                      
+                      $.each(data, function(i, item){
+                      
+                           alert(item.status);
+                    
+                              });
+                      });
+    	
+               window.location.href='profilescreen.html?back_value=3&user_id='+myid; 
+                 
+              
+                }
+                
+      function fun_private()
+      {
+        if($("#post_private").text()=='OFF')
+        {
+         $("#post_private").text("ON");
+         navigator.notification.alert(
+                                                           'Post Private ON',
+                                                           clearusername,
+                                                           'Private!!!',
+                                                           'Ok'
+                                                           );
+         }     
+        else    
+        {
+           $("#post_private").text("OFF");
+           navigator.notification.alert(
+                                                           'Post Private OFF',
+                                                           clearusername,
+                                                           'Private !!!',
+                                                           'Ok'
+                                                           );
+           }     
+         
+      }      
+          function fun_sensitive()
+      {
+        if($("#post_sensitive").text()=='OFF')
+        {
+         $("#post_sensitive").text("ON");
+         navigator.notification.alert(
+                                                           'Post Sensitive ON',
+                                                           clearusername,
+                                                           'Sensitive !!!',
+                                                           'Ok'
+                                                           );
+        }      
+        else    
+        {
+           $("#post_sensitive").text("OFF");
+           navigator.notification.alert(
+                                                           'Post Sensitive OFF',
+                                                           clearusername,
+                                                           'Sensitive !!!',
+                                                           'Ok'
+                                                           );
+        }        
+         
+      }        
+      function clearusername()
+      {
+      }
+         function back()  
+        {
+        
+          window.location.href='profilescreen.html?user_id='+myid;
+         //  window.location.href='profilescreen.html?user_id='+getValue("user_id");
+        
+        }
+        
+           function onConfirmlogout(button)
+    {
+        
+        if (button == 1)
+        {
+           
+            access_token='';
+          
+            window.location.href='login_email.html';
+            
+        }
+        
+        else
+        {
+            //nativeControls.showTabBar();
+        }
+        
+    }
+        
+        function logot()
+        {
+        navigator.notification.confirm(
+                                       'Are you sure , you want to logout?',
+                                       onConfirmlogout,
+                                       'Logout',
+                                       'Ok,Cancel');
+        }
+        
+        
+        
+        
+        function showConfirm()
+        {
+            navigator.notification.confirm(
+                                           '',
+                                           onConfirm,
+                                           '',
+                                           'Take photo ,Album ,Close'
+                                           );
+           
+        } 
+      
+        function onConfirm(button) {
+            
+            if (button == 1)
+            {
+                
+                capturePhotoEdit()
+                
+            }
+            else if(button == 2)
+            {
+                
+                getPhoto(pictureSource.PHOTOLIBRARY);
+            }
+            else if(button == 3)
+            {
+                
+           
+                
+            }
+            
+        }
+        
+        
+        
+        var pictureSource;   
+        var destinationType; 
+        
+        
+        document.addEventListener("deviceready",onDeviceReady,false);
+        
+        function onDeviceReady()
+        {
+            pictureSource=navigator.camera.PictureSourceType;
+            destinationType=navigator.camera.DestinationType;
+            
+        }
+        
+        
+        function onPhotoDataSuccess(imageData) {
+            
+               window.resolveLocalFileSystemURI(imageData, gotFileEntry, function(error){onfail(console.log("Error get fullPath"))}); 
+                        function gotFileEntry(targetImg) {  
+
+                        image_url = targetImg.fullPath ;
+            document.getElementById("pimage").src='';
+            document.getElementById("pimage").src=image_url;
+             photoalbum();
+            }
+        }
+        
+         function photoalbum()
+        {
+            var imageURI=image_url;
+            profpic=image_url;
+            var options = new FileUploadOptions();
+            options.fileKey="uploadedfile";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            
+            options.mimeType="image/jpeg";
+            
+            var params = new Object();
+            params.value1 = "test";
+            params.value2 = "param";
+            
+            options.params = params;
+            options.chunkedMode = false;
+            
+            var ft = new FileTransfer();
+          
+            ft.upload(imageURI, "http://demo.cogzideltemplates.com/client/vine-clone/mobile/image_upload", win, fail, options);
+            
+            
+            
+        }
+         var profile_picture;
+         var f;
+        function win(r) {
+            f=5;
+            imageuploadstatus=true;
+            console.log("Code = " + r.responseCode);
+            console.log("Response = " + r.response);
+            console.log("Sent = " + r.bytesSent);
+            imgurl=r.response;
+            profile_picture=imgurl;
+            alert(profile_picture);
+            upload();
+            }
+            
+        function fail(error) {
+        
+            alert("An error has occurred: Code = " = error.code);
+        }
+        
+         function onPhotoURISuccess(imageURI) {
+            window.resolveLocalFileSystemURI(imageURI, gotFileEntry, function(error){onfail(console.log("Error get fullPath"))}); 
+                        function gotFileEntry(targetImg) {  
+
+                                 
+                        image_url = targetImg.fullPath ;
+            document.getElementById("pimage").src='';
+            document.getElementById("pimage").src=image_url;
+            
+            photoalbum();
+            }
+            
+        }
+        
+                function capturePhotoEdit() {
+                    
+                        navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50, allowEdit:true, correctOrientation:true ,targetWidth:640,targetHeight:640,destinationType: destinationType.FILE_URI,saveToPhotoAlbum:true,sourceType:1}); 
+                    }
+                    
+                    function getPhoto(source) {
+                       
+                        navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,targetWidth:640,targetHeight:640,destinationType: destinationType.FILE_URI, correctOrientation:true,sourceType: source });
+                   
+                    }
+                    
+                    function onFail(message) {
+                      
+                                      
+                    }
+        
+        
+            function upload()
+            {
+              var url1 ='http://demo.cogzideltemplates.com/client/vine-clone/mobile/uploadImage?user_id='+myid+'&image_url='+profile_picture; 
+            
+               $.getJSON(url1,function(data){
+                  $.each(data, function(i, item){
+               
+                  });
+                  });
+                        
+          }
+        
+        
+        
+</script>
+</html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Splashpage</title>
+            <script type="text/javascript" charset="utf-8"></script>
+            <script src="jquery.min.js" type="text/javascript"></script>
+              <script src="jquery-1.9.1.js"></script>
+             <script type="text/javascript" charset="utf-8" src="jsOAuth.min.js"></script>
+              <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146052-10']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <style>
+	body {
+		background:url(assets/img/splash_image.png) no-repeat scroll 0 0 transparent;
+	}
+	</style>
+    
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar" onload="baseurl()">
+
+    <div class="container" style="position:relative;">
+    
+    <div class="white_logo">
+    <a href="javascript:void(0);"> <img src="assets/img/logo_s.png"> </a>
+    </div>
+    
+    
+    <div class="splash_but">
+    <div class="span12 twitter_signin">
+    <p><a> <img src="assets/img/register_fb.png" onclick="fblogin();"> </a></p>
+    </div>
+    <div class="span12 twitter_signin">
+    <p><a> <img src="assets/img/twitter_signin.png" onclick="Twitter.init();"> </a></p>
+    </div>
+    <div class="span12 email_signup">
+    <p><a> <img src="assets/img/email_signup.png" onclick="register()"> </a>  </p>
+    <p class="signin_now"> Already have an account? <b> <a onclick="login()"> Sign in now. </a> </b> </p>
+    </div>
+    </div>
+    
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/bootstrap-affix.js"></script>
+
+    <script src="assets/js/holder/holder.js"></script>
+    <script src="assets/js/google-code-prettify/prettify.js"></script>
+
+    <script src="assets/js/application.js"></script>
+
+
+    <!-- Analytics
+    ================================================== -->
+    <script>
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+      
+      
+    
+  
+     function twitterlogin()
+     {
+        	
+        	//window.location.href='login_twitter.html';
+     }
+     
+         function register()
+     {
+        	
+        	window.location.href='signup_name.html';
+     }
+      function baseurl() 
+     {
+                              
+            window.localStorage.setItem("liveurl" , 'http://demo.cogzideltemplates.com/client/vine-clone/');
+                             
+     }
+     
+
+   
+            
+       
+        var oauth; // Holds out oAuth request
+        var requestParams; // Specific request params
+        var options = {
+            consumerKey: '8wdQkSINWzGCTieGjVpMGw', // REPLACE WITH YOUR CONSUMER_KEY
+            consumerSecret: 'laHbRRJz2e81CUrPqng3TI50WVYh6izK65G2kFgS7s', // REPLACE WITH YOUR CONSUMER_SECRET
+            callbackUrl: "http://www.cogzidel.com" }; // YOUR URL
+        
+        var twitterKey = "twttrKey"; // what we will store our twitter user information in
+        var authorize_url;
+        var screenname;
+        var screenid;
+        var screenimage;
+        var twitusername;
+        var screenimage1;
+        
+        var mytoken;
+        var mysecret;
+        var ref;
+        var Twitter = {
+            init:function(){
+                     
+            
+                        window.localStorage.setItem("liveurl" , 'http://demo.cogzideltemplates.com/client/vine-clone/');
+
+  
+            
+            
+                // our storedAccessData and Raw Data
+                var storedAccessData, rawData = localStorage.getItem(twitterKey);
+                
+                // First thing we need to do is check to see if we already have the user saved!
+                if(localStorage.getItem(twitterKey) !== null){
+                    
+                    // If we already have them
+                    storedAccessData = JSON.parse(rawData); // Parse our JSON object
+                    options.accessTokenKey = storedAccessData.accessTokenKey; // This is saved when they first sign in
+                    options.accessTokenSecret = storedAccessData.accessTokenSecret; // this is saved when they first sign in
+                    mytoken= options.accessTokenKey;
+                    mysecret = options.accessTokenSecret;
+                    // jsOAuth takes care of everything for us we just need to provide the options
+                    oauth = OAuth(options);
+                    authorize_url ='https://api.twitter.com/oauth/authorize?';
+                    ref = window.open(authorize_url, '_blank', 'location=yes');
+                    
+                    ref.addEventListener('loadstart', function(event){
+                                         oauth.get('https://api.twitter.com/1.1/account/verify_credentials.json?skip_status=true',
+                                                   function(data) {
+                                                   var entry = JSON.parse(data.text);
+                                                   ref.close();
+                                                   screenname = entry.screen_name;
+                                                   screenid = entry.id;
+                                                   screenimage = entry.profile_image_url;
+                                                   twitusername = entry.name;
+                                                   
+                                                   console.log("USERNAME: " + entry.screen_name);
+                                                   console.log("TWITTER USER: "+entry.screen_name);
+                                                   console.log("TWITTER id: "+entry.id);
+                                                   
+                                                   console.log("TWITTER image: "+entry.profile_image_url);
+                                                   console.log("TWITTER name: "+entry.name);
+                                                   mystatus();
+                                                   }
+                                                   
+                                                   );
+                                         });
+                    
+                    
+                }
+                else {
+                    // We don't have a user saved yet
+                    oauth = OAuth(options);
+                    oauth.get('https://api.twitter.com/oauth/request_token',
+                              function(data) {
+                              requestParams = data.text;
+                              
+                              authorize_url ='https://api.twitter.com/oauth/authorize?'+data.text;
+                              ref = window.open(authorize_url, '_blank', 'location=yes');
+                              
+                              ref.addEventListener('loadstart', function(event){
+                                                   Twitter.success(event.url);
+                                                   });
+                              //	cb.showWebPage('https://api.twitter.com/oauth/authorize?'+data.text); // This opens the Twitter authorization / sign in page
+                              //cb.onLocationChange = function(loc){ Twitter.success(loc); }; // When the ChildBrowser URL changes we need to track that
+                              },
+                              function(data) {
+                              console.log("ERROR: "+data);
+                              }
+                              );
+                }
+            },
+            
+            /*
+             When The ChildBrowser URL changes we will track it here.
+             We will also determine if the request was a success or not here
+             */
+            success:function(loc){
+            
+            
+                
+                // The supplied oauth_callback_url for this session is being loaded
+                
+                /*
+                 We will check to see if the childBrowser's new URL matches our callBackURL
+                 */
+                if (loc.indexOf("http://www.cogzidel.com/?") >= 0) {
+                    
+                    // Parse the returned URL
+                    var index, verifier = '';
+                    var params = loc.substr(loc.indexOf('?') + 1);
+                    
+                    params = params.split('&');
+                    for (var i = 0; i < params.length; i++) {
+                        var y = params[i].split('=');
+                        if(y[0] === 'oauth_verifier') {
+                            verifier = y[1];
+                        }
+                    }
+                    
+                    // Exchange request token for access token
+                    
+                    /*
+                     Once a user has given us permissions we need to exchange that request token for an access token
+                     we will populate our localStorage here.
+                     */
+                    //alert('https://api.twitter.com/oauth/access_token?oauth_verifier='+verifier+'&'+requestParams);
+                    oauth.get('https://api.twitter.com/oauth/access_token?oauth_verifier='+verifier+'&'+requestParams,
+                              function(data) {
+                              var accessParams = {};
+                              var qvars_tmp = data.text.split('&');
+                              for (var i = 0; i < qvars_tmp.length; i++) {
+                              var y = qvars_tmp[i].split('=');
+                              accessParams[y[0]] = decodeURIComponent(y[1]);
+                              }
+                              
+                              
+                              oauth.setAccessToken([accessParams.oauth_token, accessParams.oauth_token_secret]);
+                              
+                              // Save access token/key in localStorage
+                              var accessData = {};
+                              accessData.accessTokenKey = accessParams.oauth_token;
+                              accessData.accessTokenSecret = accessParams.oauth_token_secret;
+                              mytoken= accessData.accessTokenKey;
+                              mysecret = accessData.accessTokenSecret;
+                              // SETTING OUR LOCAL STORAGE
+                              console.log("TWITTER: Storing token key/secret in localStorage");
+                              console.log('tokn :  '+accessData.accessTokenKey);
+                              localStorage.setItem(twitterKey, JSON.stringify(accessData));
+                              
+                              oauth.get('https://api.twitter.com/1.1/account/verify_credentials.json?skip_status=true',
+                                        function(data) {
+                                         var entry = JSON.parse(data.text);
+                                        ref.close();
+                                        screenname = entry.screen_name;
+                                        screenid = entry.id;
+                                        screenimage = entry.profile_image_url;
+                                        twitusername = entry.name;
+                                       
+                                        console.log("TWITTER USER: "+entry.screen_name);
+                                        console.log("TWITTER id: "+entry.id);
+                                        console.log("TWITTER image: "+entry.profile_image_url);
+                                        console.log("TWITTER backgroungimage: "+entry.profile_background_image_url);
+                                        console.log("TWITTER name: "+entry.name);  
+                                             screenimage1=entry.profile_background_image_url;                                 
+                                        mystatus();
+                                      
+                                        
+                                        },
+                                        function(data) {
+                                        ref.close();
+                                        console.log("ERROR: " + data);
+                                        }
+                                        );
+                              
+                              // Since everything went well we can close our childBrowser!
+                              //window.plugins.childBrowser.close();
+                              },
+                              function(data) {
+                              console.log(data);
+                              
+                              }
+                              );
+                }
+                else {
+                    // do nothing
+                }
+            },
+            tweet:function(){
+                var storedAccessData, rawData = localStorage.getItem(twitterKey);
+                
+                storedAccessData = JSON.parse(rawData); // Parse our JSON object
+                options.accessTokenKey = storedAccessData.accessTokenKey; // This is saved when they first sign in
+                options.accessTokenSecret = storedAccessData.accessTokenSecret; // this is saved when they first sign in
+                
+                // jsOAuth takes care of everything for us we just need to provide the options
+                oauth = OAuth(options);
+                oauth.get('https://api.twitter.com/1/account/verify_credentials.json?skip_status=true',
+                          function(data) {
+                          var entry = JSON.parse(data.text);
+                          Twitter.post();
+                          }
+                          );
+            },
+            /*
+             Now that we have the information we can Tweet!
+             */
+            post:function(){
+                var theTweet = $("#tweet").val(); // Change this out for what ever you want!
+                
+                oauth.post('https://api.twitter.com/1/statuses/update.json',
+                           { 'status' : theTweet,  // jsOAuth encodes for us
+                           'trim_user' : 'true' },
+                           function(data) {
+                           var entry = JSON.parse(data.text);
+                           console.log(entry);
+                           
+                           // FOR THE EXAMPLE
+                           app.done();
+                           },
+                           function(data) {
+                           console.log(data);
+                           }
+                           );
+            }
+        };
+        function mystatus()
+        {
+            var Liveurl=window.localStorage.getItem("liveurl");
+            
+                     
+                  
+                     
+            // var twiturl=''+Liveurl+'tlogin?user_id='+screenid+'&screen_name='+twitusername;
+            
+            var twiturl=''+Liveurl+'mobile/tlogin?user_id='+screenid+'&screen_name='+twitusername;
+            
+          //  alert(twiturl);
+            
+           
+                
+                $.getJSON(twiturl, function(data){
+                      
+                      $.each(data, function(i, item){
+                             
+                             
+                             if(item.status =='Not Registered' || item.status == '0')
+                             {
+                             
+                                   navigator.notification.alert(
+                                                            'Login Failed',
+                                                            alertDismissed,
+                                                            'Failed!',                                                                                'Ok'
+                                                            );
+                             
+                             
+                             }
+                             else
+                             {
+                             var a = '';
+                             
+                           //  alert(item.user_id);
+                             window.location.href='homescreen.html?user_id='+ item.user_id + '&username='+twitusername+'&fb_id='+a+'&profile='+item.profile_image+'&profile_image='+screenimage1+'&fb_token='+my_access_token;                     
+                             localStorage.setItem("fb_token",a);
+                             localStorage.setItem("user_id",item.user_id );
+                             localStorage.setItem("username",item.username);
+                             localStorage.setItem("fb_id",a);
+                             localStorage.setItem("profile",item.profile_image);
+                            
+                             }
+                             
+                             
+                             
+                             
+                             });
+                      });
+        
+        }
+  
+   var my_client_id = "208603362613091", 
+          my_secret = "65e3cc19441bacbb80351c61da495c06", 
+          my_redirect_uri = "https://www.facebook.com/connect/login_success.html", 
+          my_type ="user_agent", my_display = "touch"; 
+          var Liveurl= 'http://demo.cogzideltemplates.com/client/vine-clone/';
+          var facebook_token = "fbToken"; 
+          var ref; 
+          var my_access_token;
+          
+          var Facebook = {
+              init:function(){
+                  
+                  var authorize_url = "https://www.facebook.com/dialog/oauth?";
+                  authorize_url += "client_id=" + my_client_id;
+                  authorize_url += "&redirect_uri=" + my_redirect_uri;
+                  authorize_url += "&display=" + my_display;
+                  authorize_url += "&scope=email,user_birthday,status_update,publish_stream,offline_access";
+                  
+                 
+                  ref = window.open(authorize_url, '_blank', 'location=yes');
+                  
+                  ref.addEventListener('loadstart', function(event){
+                                       
+                                       Facebook.facebookLocChanged(event.url);
+                                       
+                                       });
+                  
+              },
+              facebookLocChanged:function(loc){
+                  
+                  if (loc.indexOf("code=") >= 1  ) {
+                      
+                      
+                      ref.close();
+                      
+                      
+                      var codeUrl = 'https://graph.facebook.com/oauth/access_token?client_id='+my_client_id+'&client_secret='+my_secret+'&redirect_uri='+my_redirect_uri+'&code='+loc.split("=")[1];
+                      $.ajax({
+                             url: codeUrl,
+                             data: {},
+                             type: 'POST',
+                             async: false,
+                             cache: false,
+                             success: function(data, status){
+                             
+                             
+                             my_access_token = data.split('=')[1].split('&')[0];
+                             localStorage.setItem("fb_token",my_access_token);
+                             $('#loader').show();
+                             $('#loginbox').hide();
+                             localStorage.setItem(facebook_token, data.split('=')[1].split('&')[0]);
+                             me();
+                             },
+                             error: function(){
+                             ref.close();
+                             $('#loader').hide();
+                             $('#loginbox').show();
+                             }
+                             });
+                  }
+              }
+          };
+          function fblogin(){
+              Facebook.init();
+          }
+          function me()
+          {
+              var url = 'https://graph.facebook.com/me?access_token='+my_access_token;
+              $.getJSON(url, function(response) {
+                        
+                        
+                        var userid = response.id;
+                        
+                        var name = response.name;
+                        var user_email = response.email;
+                        
+                        var first_name = response.first_name;
+                        var last_name=response.last_name;
+                        var user_name=response.username;
+                        var gender=response.gender;
+                        var userprofilelink=response.link;
+                        var birth=response.birthday;
+                        
+                        var splitbirth=birth.split("/");
+                        birthday = splitbirth[1]+'/'+splitbirth[0]+'/'+splitbirth[2];
+                        
+                        window.localStorage.setItem("link",userprofilelink);
+                        	alert(last_name);
+                            $.getJSON(''+Liveurl+'/mobile/flogin?user_id='+userid+'&first_name='+first_name+'&last_name='+last_name+'&email='+user_email,function(data){
+                                  
+                                  $.each(data, function(i, item){
+                                         
+                                 
+                                                       if(item.status =='Not Registered' || item.status == '0')
+                             {
+                             
+                                   navigator.notification.alert(
+                                                            'Login Failed',
+                                                            alertDismissed,
+                                                            'Failed!',                                                                                'Ok'
+                                                            );
+                             
+                             
+                             }
+                             else
+                             {
+                             var a = '';
+                             
+                           //  alert(item.user_id);
+                              window.location.href='homescreen.html?user_id='+ item.user_id + '&username='+name+'&fb_id='+userid+'&profile='+item.profile_image+'&fb_token='+my_access_token;
+                           
+                                         localStorage.setItem("fb_token",my_access_token);                     
+                             localStorage.setItem("fb_token",a);
+                             localStorage.setItem("user_id",item.user_id );
+                             localStorage.setItem("username",item.username);
+                             localStorage.setItem("fb_id",a);
+                             localStorage.setItem("profile",item.profile_image);
+                       
+                             }
+                             
+                                        
+                                         
+                                      
+                                         
+                                         
+                                         
+                                         
+                                         });
+                                  });
+                        
+                        });
+              
+              
+          }
+        function alertDismissed()
+        {
+        }  
+        function back()  
+        {
+        
+          window.location.href='index.html';
+        
+        
+        }
+		function login()
+		{
+		window.location.href='login_email.html';
+		}  
+  
+     </script>
+
+  </body>
+</html>

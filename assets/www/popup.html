@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Pop up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+       <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146052-10']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    
+    <script type="text/javascript">
+    
+    function fb_share()
+  {
+  
+  var var_id = $('#fb').attr('rel');
+  
+  alert(var_id);
+  
+
+     alert(userid);
+ // alert(description);
+   //var fbshareurl=''+Liveurl+'feed/fbshare?v_id='+vid+'&token=CAACZBTtDENYwBAP04LhYNNZCogU4G2hzZCVXm8YqZCRikamBnCCWC5QfaLzUJu8H7fS6vdCSvfGSZCJAEW4LwBjnF0DpNkTqdo0xG349SWMZCGxbeDA4KpnafOPvPpBiQeMEE47htGokQAEFdc0J8kJy5ojiPMY2UdZCHbr7icOuMFaNSiLHnm6&description=test;
+   
+   
+   var fbshareurl=''+Liveurl+'mobile/fbshare?video_id='+vid+'&user_id='+userid;
+   console.log(fbshareurl);
+ 
+  			             $.getJSON(fbshareurl, function(data){
+                      
+                      $.each(data, function(i, item){
+                  
+                     alert(item.status);
+                     
+                
+                                 });
+                             
+                      });
+
+
+}
+    
+    </script>
+
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+<!-- <div class="container">  
+<h2>Example of creating Modals with Twitter Bootstrap</h2>  
+<div id="example" class="modal hide fade in" style="display: none; ">  
+<div class="modal-header">  
+<a class="close" data-dismiss="modal">×</a>  
+<h3>This is a Modal Heading</h3>  
+</div>  
+<div class="modal-body">  
+<h4>Text in a modal</h4>  
+<p>You can add some text here.</p>                
+</div>  
+<div class="modal-footer">  
+<a href="#" class="btn btn-success">Call to action</a>  
+<a href="#" class="btn" data-dismiss="modal">Close</a>  
+</div>  
+</div>  
+<p><a data-toggle="modal" href="#example" class="btn btn-primary btn-large">Launch demo modal</a></p>  
+</div>  
+-->
+<!-- Pop Up Start -->
+
+<div id="example" class="modal hide fade in" style="display: none; ">  
+<fieldset>
+<div  class="container">
+  <div class="row-fluid">
+  
+	<div class="popup_bg" style=" background: #FFFFFF;
+	width: 100%;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-box-shadow: 0 1px 1px 1px #E9E9E9;
+	-moz-box-shadow: 0 1px 1px 1px #E9E9E9;
+	box-shadow: 0 1px 1px 1px #E9E9E9;
+    position:absolute;
+    top:125px;">
+		<div class="popup-border">
+			<p class="popup_text">Share on Twitter</p>
+		</div>
+		<div class="popup-border">
+			<p class="popup_text" rel="fsdfs" id="fb" onclick="fb_share()">Share on Facebook</p>
+		</div>
+		<!--<div class="popup-border">
+			<p class="popup_text">Share to...</p>
+		</div>
+		<div class="popup-border">
+			<p class="popup_text">Report this post</p>
+		</div>-->
+		<div class="popup-border">
+           
+			<p style="cursor:pointer;" class="popup_text" href="#"  data-dismiss="modal" aria-hidden="true">Cancel</p>
+           </div>
+    </div>
+    </div>
+  </div>
+  </div>  
+  </fieldset> 
+<p data-toggle="modal" href="#example">Launch demo modal</p>  
+
+</div
+ 
+ 
+
+<!-- Pop Up End -->
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/bootstrap-affix.js"></script>
+
+    <script src="assets/js/holder/holder.js"></script>
+    <script src="assets/js/google-code-prettify/prettify.js"></script>
+
+    <script src="assets/js/application.js"></script>
+    
+   
+  
+
+
+    <!-- Analytics
+    ================================================== -->
+    <script>
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+
+  </body>
+</html>

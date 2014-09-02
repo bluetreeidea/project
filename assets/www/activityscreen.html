@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Homepage</title>
+            <script type="text/javascript" charset="utf-8"></script>
+            <script src="jquery.min.js" type="text/javascript"></script>
+              <script src="jquery-1.9.1.js"></script>
+             <script type="text/javascript" charset="utf-8" src="jsOAuth.min.js"></script>
+              <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146052-10']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+
+  <body data-spy="scroll"   data-target=".bs-docs-sidebar" onload="activity();"> 
+    <!-- Top style="background-color:#e5e5df;" menu -->
+    
+    <!--<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+         
+        
+			<div class="row-fluid">
+            <div class="span12">
+            <div class="header">
+            <div class="header_left">
+            <div class="span6">
+            <a href="javascript:void(0);"><img src="assets/img/logo_s.png"></a>
+            </div>
+            </div>
+            <div class="header_right">
+            <div class="span6">
+            <ul>
+            <li>
+            <a href="javascript:void(0);"> <img src="assets/img/search_icon.png" onclick="explore()"> </a>
+            </li>
+            <li>
+            <a href="javascript:void(0);"> <img src="assets/img/stop_play.png" onclick="video('+item.video_id+')"> </a>
+            </li>            
+            </ul>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+          
+          
+        </div>
+      </div>
+    </div>-->
+    
+    <!-- Top menu -->
+    
+    <!-- sub menu -->
+
+<!--<div class="container-fluid" style="margin-bottom:6px;">
+<div class="row-fluid">
+<div class="span12">
+<div class="sub_header">
+<ul>
+<li style="padding:0;">
+<a href="javascript:void(0);" onclick="home();" > feed </a>
+</li>
+<li>
+<a href="javascript:void(0);" onclick="activity();" class="menu_active"> activity </a>
+</li>
+<li>
+<a href="javascript:void(0);" onclick="explore1();"> explore </a>
+</li>
+<li>
+<a href="javascript:void(0);" onclick="profile();"> profile </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>-->
+<div>
+</br>
+<div id="activity"></div>
+
+<div id="loader">
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+              
+                      
+               <center> <img src="assets/img/loader.gif" width="30" height="30"> </center>
+             
+               <br>
+               <br>
+             
+            
+               
+</div>
+    </div>
+    <!-- sub menu -->
+    
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/bootstrap-affix.js"></script>
+    <script src="assets/js/holder/holder.js"></script>
+    <script src="assets/js/google-code-prettify/prettify.js"></script>
+
+    <script src="assets/js/application.js"></script>
+<input type="hidden" id="hidden">
+
+    <!-- Analytics
+    ================================================== -->
+    <script type="text/javascript">
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+     
+    //   var Liveurl ='http://demo.cogzideltemplates.com/client/vine-clone/';
+             //var Liveurl = window.localStorage.getItem("liveurl");
+     var Liveurl = Activityy_native.Postonfacebook1();
+     //alert(Liveurl);
+     $(document).ready(function()
+    		 {
+    	 $('#hidden').val(Liveurl);
+    		 }
+    		 )
+           //  alert(Liveurl);
+           //  $("")
+             var userid=getValue("user_id");                       
+             var profileback="";     
+      function profile()
+      {
+     window.location.href='profilescreen.html?user_id='+userid+'&profile_back='+profileback;
+      
+      }
+           
+   function getValue(varname)
+                {
+                    var url = window.location.href;
+                    var qparts = url.split("?");
+                    
+                    if (qparts.length == 1)
+                    {
+                        return "";
+                    }
+                    else{
+                        var query = qparts[1];
+                        var vars = query.split("&");
+                        var value = "";
+                        for (i=0;i<vars.length;i++)
+                        {
+                            var parts = vars[i].split("=");
+                            if (parts[0] == varname)
+                            {
+                                value = parts[1];
+                                break;
+                            }
+                        }
+                        value = unescape(value);                        
+                        value.replace(/\+/g," ");
+                        return value;
+                    }
+                    
+                }
+     
+  
+  function video(video)
+  {
+  window.location.href='video.html?user_id='+userid+'&fb_token='+getValue("fb_token")+'&vidz='+video;
+  }   
+   function activity(){  
+	  var name=new Array();
+
+	    	//alert($('#hidden').val());
+	    		
+      var url=$('#hidden').val()+'/mobile/activity';
+      //alert(url);	 
+ $.ajax({
+           	type: "GET",
+            url:url,
+            dataType:'JSON',
+            data: { user_id: userid},
+            success: function(data)
+            {
+             // alert(data);
+             // Activityy_native.notify(data);
+       $.each(data, function(i, item){     
+    	   
+             var variab=item.status_activity;
+             
+           //  alert(name);
+            // Activityy_native.notify(name);
+            if (typeof variab == 'undefined') 
+    	     {
+    	    // alert('welcome to sanjay');
+    	     var resid="";
+    	     resid=item.status;     	     
+    	     var name_append= '<div class="container-fluid" ><div class="row-fluid" ><div class="span12"><div class="user_explore"><div class="user_exp_left"><img src="'+item.sub_user_profile_image+'"  onclick="profileclick2('+item.sub_user_id+','+item.main_user_id+')"></div><div class="user_exp_right"><p class="user_exp_name" onclick="profileclick('+item.sub_user_id+','+item.main_user_id+','+item.v_id+')"> '+item.sub_user_name+' </p> <p class="sangu_bulls"> '+resid+'  <span >'+item.created+' </span></p></div></div></div></div></div>';
+    	    // alert(item.created);
+    	    // alert(item.main_user_id);    	    
+    	     name[i]=item.sub_user_name;
+    	    // alert(name);
+             $("#activity").append(name_append);
+             $("#loader").delay(1500).fadeOut();
+            // Activityy_native.notify(uname);
+             }
+         else {
+             $("#loader").hide();         	    
+	         var name_append= '<div> <br><br><center><br><br><br>No Activity<br><br></div>'; 
+	          $("#activity").append(name_append);
+	             	         } 
+    	     
+             });
+             
+       //alert("welcome"+name[0]);
+       var len=name.length;
+     //  alert(len);
+       //var sanjay=new Array();
+      // var sanjay=name; 
+       Activityy_native.notify(len,name);
+             }
+         
+              });
+
+	   }
+
+  
+  function profileclick2(userid,owner){
+	  
+	    Activityy_native.showOtherProfile(userid,owner);
+	  
+  }
+  
+  function profileclick(owner,userid,vid){
+  
+  //alert(owner);
+ // alert(userid);
+ // alert(vid);
+	    Activityy_native.activity_detail(owner,userid,vid);
+	  
+  }
+    
+  
+                
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Settings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146052-10']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar" onload="load();">
+
+   
+<!-- Subhead
+================================================== -->
+
+  <div class="container">
+  
+  
+     <div class="settings_bg">
+		<div align="center" class="row" >
+			<p class="set_img"> <img class="height" src="" id="profileimgid" onclick="camera();"></p>
+		</div>
+            <div class="setting_txt">
+    
+                <div class="setting_text top_bdr"  style="border-top: 3px solid #D9D9D9!important; text-align:center; ">
+                    <input type="text" class="setting_username" id = "pnameid" placeholder="Username">
+                    
+                </div>
+                <div class="setting_text top_bdr">
+                   
+                    <input type="text" class="setting_description" id = "fewwordsid" style="width:260px;" placeholder="A few words about yourself">
+                </div>
+                <div class="setting_text top_bdr" >
+                    
+                    <input type="text" id="locationid" class="setting_location" placeholder="Location">
+                </div>
+                 <div class="setting_text top_bdr" style="padding:0px!important; border-bottom: 3px solid #D9D9D9;">
+                    <p class="setting_account">Account</p>
+                </div>
+            <div class="setting_text control-group">
+                <p class="setting_register">Email</p>
+             <span class="float" id="email_id"></span>
+            </div>
+
+            
+            <div class="setting_text top_bdr" >
+                <p class="setting_register">Phone</p>
+                <input style="text-align:right!important;" id="phoneid" type="text" placeholder="optional" >
+            </div>
+            <div class="setting_text top_bdr" id="contentid">
+                <p class="setting_register">Your Content</p>
+            </div>
+            
+            
+            <div class="setting_text top_bdr" id="notificationsetting">
+                <p class="setting_register">Notification setting</p>
+            </div>
+            <div class="setting_text top_bdr" id="socialnetwork" style="padding:0px!important; border-bottom: 3px solid #D9D9D9;">
+				<p class="setting_account">social networking</p>
+            </div>
+            <div class="setting_text top_bdr" id="tweetconnect">
+				<p class="setting_register">Connected to Twitter</p>
+				<span class="clsRight">Not connected</span></p>
+            </div>
+            <div class="setting_text top_bdr" id="fbidconnect">
+				<p class="setting_register">Facebook</p>
+				<span class="clsRight" id="fb_cnt"></span></p>
+            </div>
+            
+          <div class="setting_text top_bdr" style="padding:2% 0;">
+				<a class="logout" href="#">
+                <img src="assets/img/logout.jpg" onclick="logout_native();" />
+                </a>
+            </div>
+           
+            </div>
+    </div>
+    
+  </div>
+  
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/bootstrap-affix.js"></script>
+
+    <script src="assets/js/holder/holder.js"></script>
+    <script src="assets/js/google-code-prettify/prettify.js"></script>
+
+    <script src="assets/js/application.js"></script>
+
+
+    <!-- Analytics
+    ================================================== -->
+    <script>
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+    
+    
+        
+      <script type="text/javascript">
+          
+          var myid =getValue("user_id");
+          //var Liveurl = window.localStorage.getItem("liveurl");
+          var Liveurl ='http://demo.cogzideltemplates.com/client/vine-clone/';
+ 
+          var neelu;
+          var pimage,name;
+          var image_from_native;
+          var f='';
+          var tmail;
+          function load()
+          {
+               var getuserdetail=''+Liveurl+'mobile/view_profile?user_id='+myid;
+           
+              $.getJSON(getuserdetail, function(data){
+                        
+                        $.each(data, function(i, item){
+                               
+                              document.getElementById('profileimgid').src=item.profile_image;
+                              pimage=item.profile_image;
+                            //  document.getElementById('pnameid').innerHTML = item.fullname;
+                               $('#pnameid').val(item.fullname);
+                               $('#fewwordsid').val(item.few_words);
+                               
+                               $('#locationid').val(item.location);
+                               $('#fewwordsid').val(item.few_words);
+                               
+                            //   $('#email_id').val(item.email);
+                             document.getElementById('email_id').innerHTML = item.email;
+                               $('#pwdid').val(item.password);
+                               
+                               $('#phoneid').val(item.phone_number);
+                               pimage=item.profile_image;
+                               name=item.fullname;
+                               tmail=item.email;
+                              if(item.fb_id=="")
+                               {                            
+                               document.getElementById('fb_cnt').innerHTML = "Not Connected";
+                               }
+                               else{
+                                document.getElementById('fb_cnt').innerHTML = "Connected";
+                               }
+                               
+                               
+                              // var dash = '<div class="container"><div class="settings_bg"><div class="setting_profile"><a href="#" class="setting_plus"><img src="plus.jpg"></a><img src='+item.profile_image+'></div><div class="setting_txt"><div class="setting_text top_bdr" style="border-top: 3px solid #D9D9D9!important;"><p class="setting_username">'+item.profile_fullname+'/p></div><div class="setting_text top_bdr"><input type="text" class="setting_description" style="width:260px;" placeholder="A few words about yourself"></div><div class="setting_text top_bdr"><input type="text" class="setting_location" placeholder="Location"> </div><div class="setting_text top_bdr" style="padding:0px!important; border-bottom: 3px solid #D9D9D9;"><p class="setting_account">Account</p></div><div class="setting_text control-group"><p class="setting_register">Email</p><input class="controls" type="text" placeholder="Enter it here"></div><div class="setting_text top_bdr"><p class="setting_register">Password</p><input type="text" placeholder="Enter it here"></div><div class="setting_text top_bdr"><p class="setting_register">Phone</p><input type="text" placeholder="optional" class="top_bdr"></div><div class="setting_text top_bdr"><p class="setting_register">Your Content</p></div><div class="setting_text top_bdr"><p class="setting_register">Notification setting</p></div><div class="setting_text top_bdr" style="padding:0px!important; border-bottom: 3px solid #D9D9D9;"><p class="setting_account">social networking</p></div><div class="setting_text top_bdr"><p class="setting_register">Connected to Twitter@prasanna00234</p></div><div class="setting_text top_bdr"><p class="setting_register">Facebook</p><span class="clsRight">Not connected</span></p></div><div class="setting_text top_bdr" style="padding:2% 0;"><img src="logout.jpg" /></a></div></div></div></div>';
+
+                               
+                               
+                               });
+                        });
+
+          }
+          
+          
+          function getValue(varname)
+          {
+              var url = window.location.href;
+              var qparts = url.split("?");
+              
+              if (qparts.length == 1)
+              {
+                  return "";
+              }
+              else{
+                  var query = qparts[1];
+                  var vars = query.split("&");
+                  var value = "";
+                  for (i=0;i<vars.length;i++)
+                  {
+                      var parts = vars[i].split("=");
+                      if (parts[0] == varname)
+                      {
+                          value = parts[1];
+                          break;
+                      }
+                  }
+                  value = unescape(value);
+                  
+                  value.replace(/\+/g," ");
+                  return value;
+              }
+              
+          }
+          
+           function save()
+                {
+    	              var private='no';    
+                      var sensitive='no';   
+                      var avatar;             
+                      var username=$('#pnameid').val();
+                      var fewords=$('#fewwordsid').val();
+                      var location=$('#locationid').val();
+                      var email=$('#email_id').val();
+                      var phone=$('#phoneid').val();
+                      if(fewords==""){
+                          fewords="none";
+                          }
+                       if(location=="")
+                          { 
+                          location="location";   
+                          }
+                          if(phone=="")
+                           {
+                           phone="Phone"; 
+                           }
+                      			
+                 
+                if(f==5)
+                  avatar=profile_picture;
+                else if(f==7)   
+                  avatar=neelu;
+                else
+                  avatar=pimage;
+                  
+                                
+            
+               var saveprofile=''+Liveurl+'mobile/edit_profile?user_id='+myid+'&email='+tmail+'&fullname='+username+'&location='+location+'&profile_image='+avatar+'&phone_number='+phone+'&few_words='+fewords+'&your_contents_pri='+private+'&your_contents_sen='+sensitive;
+               console.log(saveprofile);
+               $.getJSON(saveprofile, function(data){
+                     
+                      $.each(data, function(i, item){
+                      
+                         //  alert(item.status);
+                    
+                              });
+                      });
+    	
+           
+           save_native();
+                 
+              
+                }
+                
+           function save_native()
+           {
+           other_native.save_native();
+           
+           }     
+          
+       
+      function logout_native(){
+            other_native.logout()
+      
+      }
+      function camera()
+      {
+      other_native.settings();
+      }
+          
+      function callFromActivity(msg){
+             
+             if(msg== null){
+               f=7
+              neelu =pimage;
+             
+             }         
+                      
+                      f=5;
+                      profile_picture = msg;
+	                  document.getElementById('profileimgid').src=profile_picture;        
+	 
+    }    
+      function save_san(){
+      
+      save();
+      
+      }    
+          
+          
+          
+          </script>
+      
+    
+
+  </body>
+</html>

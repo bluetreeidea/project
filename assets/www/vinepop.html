@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Pop up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+   <!--    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146052-10']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>-->
+	<title>A very Simple jQuery Popup</title>
+<script type="text/javascript" src="assets/js/jquery-min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+//open popup
+$("#pop").click(function(){
+  $("#overlay_form").fadeIn(100);
+  positionPopup();
+});
+
+//close popup
+$("#close").click(function(){
+	$("#overlay_form").fadeOut(50);
+});
+});
+
+//position the popup at the center of the page
+function positionPopup(){
+  if(!$("#overlay_form").is(':visible')){
+    return;
+  } 
+  $("#overlay_form").css({
+      left: ($(window).width() - $('#overlay_form').width()) / 2,
+      top: ($(window).width() - $('#overlay_form').width()) / 7,
+      position:'absolute'
+  });
+}
+
+//maintain the popup at center of the page when browser resized
+$(window).bind('resize',positionPopup);
+
+</script>
+
+</head>
+<body>
+
+<a href="#" id="pop" >PopUp</a>
+<br />
+	<div data-rel="popup"  id="overlay_form" class="modal hide fade in" style="display: none; ">  
+<fieldset>
+<div  class="container">
+  <div class="row-fluid">
+  
+	<div class="popup_bg" style=" background: #FFFFFF;
+	width: 100%;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-box-shadow: 0 1px 1px 1px #E9E9E9;
+	-moz-box-shadow: 0 1px 1px 1px #E9E9E9;
+	box-shadow: 0 1px 1px 1px #E9E9E9;
+    position:absolute;
+    top:125px;">
+		<div class="popup-border">
+			<p class="popup_text">Share on Twitter</p>
+		</div>
+		<div class="popup-border">
+			<p class="popup_text">Share on Facebook</p>
+		</div>
+		<!--<div class="popup-border">
+			<p class="popup_text">Share to...</p>
+		</div>
+		<div class="popup-border">
+			<p class="popup_text">Report this post</p>
+		</div>-->
+		<div class="popup-border">
+           
+			<p id="close"  style="cursor:pointer;" class="popup_text" href="#"  data-dismiss="modal" aria-hidden="true">Cancel</p>
+           </div>
+    </div>
+    </div>
+  </div>
+  </div>  
+	
+
+</body>
+</html>

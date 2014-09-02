@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Homepage</title>
+            <script type="text/javascript" charset="utf-8"></script>
+            <script src="jquery.min.js" type="text/javascript"></script>
+              <script src="jquery-1.9.1.js"></script>
+             <script type="text/javascript" charset="utf-8" src="jsOAuth.min.js"></script>
+              <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <meta name="description" content="">
+              <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="video-js.css" rel="stylesheet" type="text/css">
+    <script src="video.js"></script>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+    		//alert('welcome to home screen');
+      _gaq.push(['_setAccount', 'UA-146052-10']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+<style>
+
+video { 
+    width:"0px" height:"0px";   
+      -ms-transform: rotate(-45deg);
+    -ms-transform-origin: center center;
+    -o-transform: rotate(-45deg);
+    -o-transform-origin: center center;
+    -webkit-transform: rotate(0deg);    
+    -moz-transform: rotate(-45deg);
+    -moz-transform-origin: center center;
+    -transform: rotate(-45deg);
+    -transform-origin: center center;
+    position:relative;
+    left:0px;
+    top:0px;
+    bottom:0px;
+    image-fit :fill;
+}
+.big_img{
+    position:relative;
+    left:0px;
+    top:0px;
+    overflow:hidden;
+    height:270px;
+    background-color:#336699;    -ms-transform: rotate(45deg);
+    -ms-transform-origin: center center;
+    -webkit-transform: rotate(0deg);
+    -webkit-transform-origin: center center;
+    -o-transform: rotate(45deg);
+    -o-transform-origin: center center;
+    -moz-transform: rotate(45deg);
+    -moz-transform-origin: center center;
+    -transform: rotate(45deg);
+    -transform-origin: center center;
+ 
+}
+@media (max-width: 767px) {
+  body {
+    padding-right: 10px!important;
+    padding-left: 10px!important;
+  }
+}
+
+</style>
+
+
+    
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar" onload="home()">
+ 
+<!-- <body class="modal-open page-overflow" onload="home()">-->
+ 
+    
+    <!-- sub menu -->	
+ <div>
+</br>
+<div id="home_feeds">
+
+</div>
+</div>
+
+
+<div id="loader">
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+              
+              
+               <center> <img src="assets/img/loader.gif" width="30" height="30"> </center>
+             
+               <br>
+               <br>
+             
+            
+               
+</div>
+    
+    <!-- sub menu -->
+    
+<div id="example" class="modal hide fade in" style="display: none; ">  
+<div  class="container">
+  <div class="row-fluid">
+  
+	<div id="mores" class="popup_bg" style=" background: #FFFFFF;
+	width: 100%;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-box-shadow: 0 1px 1px 1px #E9E9E9;
+	-moz-box-shadow: 0 1px 1px 1px #E9E9E9;
+	-webkit-overflow-scrolling: hidden;
+	
+	box-shadow: 0 1px 1px 1px #E9E9E9;
+    position:absolute;
+    top:125px;">
+		<div class="popup-border"  onclick="tw_share()">
+			<p class="popup_text" >Share on Twitter</p>
+		</div>
+        <div class="popup-border" id="v_title" onclick="fb_share()">
+			<p class="popup_text" >Share on Facebook</p>
+		</div>
+		<!--<div class="popup-border">
+			<p class="popup_text">Share to...</p>
+			 </div>
+        <div class="popup-border" onclick="report()">
+            <p class="popup_text" >Report this post</p>
+		</div>-->
+		<div class="popup-border" onclick="delete_post()">
+			<p class="popup_text" >Delete this post</p>
+		</div>
+		<input type="hidden" id="hh">
+		<div class="popup-border">
+           
+			<p style="cursor:pointer;" class="popup_text" href="#"  data-dismiss="modal" aria-hidden="true">Cancel</p>
+           </div>
+    </div>
+    </div>
+  </div>
+  </div>  
+
+
+  <div id="example1" class="modal hide fade in" style="display: none; ">  
+<div  class="container">
+  <div class="row-fluid">
+  
+    <div id="mores" class="popup_bg" style=" background: #FFFFFF;
+    width: 100%;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-box-shadow: 0 1px 1px 1px #E9E9E9;
+    -moz-box-shadow: 0 1px 1px 1px #E9E9E9;
+    -webkit-overflow-scrolling: hidden;
+    
+    box-shadow: 0 1px 1px 1px #E9E9E9;
+    position:absolute;
+    top:125px;">
+        <div class="popup-border" id="v_poster" onclick="tw_share()">
+            <p class="popup_text" >Share on Twitter</p>
+        </div>
+        <div class="popup-border" id="v_title" onclick="fb_share()">
+            <p class="popup_text" >Share on Facebook</p>
+        </div>
+        <!--<div class="popup-border">
+            <p class="popup_text">Share to...</p>
+        </div>-->
+        <div class="popup-border" onclick="report()">
+            <p class="popup_text" >Report this post</p>
+        </div>
+        
+        <input type="hidden" id="hh">
+        
+        <div class="popup-border">
+           
+            <p style="cursor:pointer;" class="popup_text" href="#"  data-dismiss="modal" aria-hidden="true">Cancel</p>
+           </div>
+    </div>
+    </div>
+  </div>
+  </div>  
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/bootstrap-affix.js"></script>
+
+    <script src="assets/js/holder/holder.js"></script>
+    <script src="assets/js/google-code-prettify/prettify.js"></script>
+
+    <script src="assets/js/application.js"></script>
+
+
+    <!-- Analytics
+    ================================================== -->
+
+
+    <script type="text/javascript">
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })(); 
+      
+      
+             //var Liveurl = window.localStorage.getItem("liveurl");
+            // Var userid=JSON.parse(locater.prasi()); 
+            // var Liveurl ='http://demo.cogzideltemplates.com/client/vine-clone/';
+      			//Feed_native.getLiveurl();
+            // var str=Feed_native.getliveurl();
+             var Liveurl = Feed_native.Postonfacebook1();
+      			//alert(Liveurl);
+      			//var response = Feed_native.getLiveurl();
+      			//alert(response);      	 
+      			
+             var userid=getValue("user_id");             
+            //var vid=getValue("v_id");
+            var vid="";
+            var fb=getValue("fb_token");
+            var key=getValue("accesskey");
+            var keytoken=getValue("accesstoken");
+              console.log(fb);
+ // alert(fb);
+             
+      //   alert("thala");
+             
+             var profileback="";
+              var lastScrollTop ="";
+     
+       $(window).scroll(function() {
+     var body = $("body")[0],scrollTop = body.scrollTop;
+ 
+ 
+  if (scrollTop > lastScrollTop) {
+  
+        if (scrollTop >= (body.scrollHeight - window.innerHeight - 50)) {
+          
+           home();
+        }
+        
+    }
+     lastScrollTop = scrollTop;
+ 
+});
+     
+     
+     var count= 01;
+     
+     
+      function home()
+      {
+      		
+            $('#seemore').hide();
+      		$('#loader').show();  
+    var userid=getValue("user_id");
+         var feedurl=''+Liveurl+'feed/home_feed';  
+      $.ajax({
+           	type: "GET",
+            url:feedurl,
+            dataType:'JSON',
+            data: { user_id: userid,start: count},
+            success: function(data)
+            {
+                         
+                      $.each(data, function(i, item){
+                   vid = item.video_id;  
+            		
+            		   /* if(item.total_like>0)
+            			
+            			{
+            			likecount1();
+            			$(".user_detail").css("border-bottom","1px solid #DBDBDB");
+            			}
+            			else
+            			{
+            			likecount();
+            			$(".user_detail").css("border","none");
+            			  
+                        
+            			}
+                      
+                      	if(item.total_vine>0)
+            			
+            			{
+            			vinecount1();
+            			$(".member_like").css("border-bottom","1px solid #DBDBDB");
+            			}
+            			else
+            			{
+            			vinecount();
+            			$(".member_like").css("border","none");
+            			} */
+                      
+            		
+            			
+            			/*if(item.total_vine!=='0')
+            			{
+            			$("[id^=resedio_id_"+item.video_id+"]").show();
+            			}
+            			if(item.total_vine!=='0')
+            			{
+            			$("[id^=resedio_id]").hide();
+            			}*/
+                      if(item.user_like=='Like')
+                      {
+                      
+                        var likeimage='assets/img/smile-hv.png';
+                        }
+                        else
+                        {
+                          var likeimage='assets/img/smiley.png';  
+                        }
+                      
+                         var vineimage;
+                        
+                           $("[id^=vine_hide2_"+userid+"]").hide();
+                        	 //$("[id^=resedio_id_"+userid+"]").hide();
+                
+                  if(item.user_vine=='Vine')
+                        {
+                         vineimage='assets/img/suffle-hv.png';
+                        }
+                        else
+                        {
+                          vineimage='assets/img/shuffle.png';  
+                        }
+                       
+                    /*   if(item.total_like>0)
+                       {
+                      
+                       var lik='<p id="hidelike_'+item.video_id+'" onclick="likelist('+item.video_id+','+userid+');"> <span id="chlike_'+item.video_id+'">'+item.total_like+' </span> People like this </p>';
+                     
+                                            $(".user_detail").css("border-bottom","1px solid #DBDBDB");
+                     
+                     
+                       }
+                       else
+                       {
+                       $(".user_detail").css("border","none");
+                      var lik='';
+                        }       
+                        
+                        if(item.total_vine>0)
+                        {
+                        $(".member_like").css("border-bottom","1px solid #DBDBDB");
+                       var vin='<p id="resedio_'+item.video_id+'" class="revine" onclick="resediolist('+item.video_id+','+userid+');"><span id="chvine_'+item.video_id+'"> '+item.total_vine+' </span> Resedio</p>';
+                        }
+                        else
+                        {
+                        $(".member_like").css("border","none");
+                        var vin='';
+                        } */
+                                 
+                                 
+                                       
+                        if(item.total_like<='0')
+                     {
+                     //alert(item.total_likes)
+//alert('welcome');
+                     var lik='<p id="hidelike_'+item.video_id+'" onclick="likelist('+item.video_id+','+userid+');"> <span id="chlike_'+item.video_id+'">'+item.total_like+' </span> People like this </p>';
+                     }
+                     else
+                     {
+                      
+                     var lik= '<p id="hidelike_'+item.video_id+'" onclick="likelist('+item.video_id+','+userid+');"> <span id="chlike_'+item.video_id+'">'+item.total_like+' </span> People like this </p>';
+                     }     
+                       
+                      if(item.total_vine<='0')
+                      {
+                     
+                      var vin='<p id="resedio_'+item.video_id+'" class="revine" onclick="resediolist('+item.video_id+','+userid+');"><span id="chvine_'+item.video_id+'"> '+item.total_vine+' </span> Resedio</p>';
+                      }
+                     else
+                      {
+                      
+                      var vin= '<p id="resedio_'+item.video_id+'" class="revine" onclick="resediolist('+item.video_id+','+userid+');"><span id="chvine_'+item.video_id+'"> '+item.total_vine+' </span> Resedio</p>';
+                      } 
+                    
+                    
+                       
+                       if(item.user_id==userid)
+                       {
+                       var pops='<img data-toggle="modal" href="#example" class="pop" id="more_'+item.video_id+'" src="assets/img/grey_square_but_3.png"  onclick="moreoption('+item.video_id+','+sangu+')">';
+                       }
+                       
+                       else
+                       {
+                       var pops='<img data-toggle="modal" href="#example1" class="pop" id="more_'+item.video_id+'" src="assets/img/grey_square_but_3.png"  onclick="moreoption('+item.video_id+','+sangu+')">';
+                       }    
+                                  
+                                 
+                                          
+                     var t2=getValue("fb_token");
+                    var sangu=item.title;
+                     sangu=sangu.replace("<hash_without_space>","\"");
+                     sangu=sangu.replace("<hash_with_space>","\\"); 
+                     sangu=sangu.replace("%20%20","\n");
+                     sangu=sangu.replace("%20"," ");
+                     title=sangu;
+                   //  alert("video name"+item.video_name);
+	        //   var feed='<div class="container"><div class="row-fluid"><div class="span12"><div class="big_img"><video id="video" height:270; width="100%" loop poster="'+item.video_poster+'" ><source src="'+item.video_name+'"/></video></div><div class="span12 user1"><div class="user_img"><img src="'+item.profile_image+'" id="otherid'+item.user_id+'" onclick="profile1('+item.user_id+','+userid+','+1+')"></div><div class="user_right"><div class="user_detail"><p class="user_name"> '+item.fullname+' <span> '+item.video_created_date+' </span> </p><p>  '+sangu+' <span class="competition"> '+item.channel+' </span> </p><p></p></div><div class="member_like"><p> <span id="chlike_'+item.video_id+'" onclick="likelist('+item.video_id+','+userid+');">'+item.total_like+' </span> likes </p></div><div class="comment_detail"><p class="revine"><span id="chvine_'+item.video_id+'" onclick="likelist('+item.video_id+','+userid+');"> '+item.total_vine+' </span> resedio</p><div class="comment_but"><div class="comment_but_left"><ul><li style="padding:0;"> <a href="javascript:void(0);"> <img id="likebutton_'+item.video_id+'" src="'+likeimage+'" width="80" height="30" onclick="fun_likebt('+item.video_id+')"> </a> </li><li id="vine_hide2_'+item.user_id+'"  style="padding:0 5px 0 15px!important;"><img src="'+vineimage+'" onclick="fun_vinebt('+item.video_id+')"></li><li> <a href="javascript:void(0);"> <img src="assets/img/comment.png" onclick="fun_profile_comment('+getValue("user_id")+','+item.video_id+','+1+')"> </a> </li></ul></div><div class="comment_but_right"><a href="#">   <img id="graybutton_'+item.video_id+'"  src="assets/img/grey_square_but_3.png" onclick= "ok.performClick('+item.video_id+');">   </a></div></div></div></div></div></div></div></div>';
+	         
+	         
+
+             //    var feed='<div class="container"><div class="row-fluid"><div class="span12"><div class="big_img"><video id="video" width="100%" height="270" loop ><source src="'+item.video_name+'" type="video/mp4"/></video></div><div class="span12 user1"><div class="user_img"><img src="'+item.profile_image+'" id="otherid'+item.user_id+'" onclick="profile1('+item.user_id+','+userid+','+1+')"></div><div class="user_right"><div class="user_detail"><p class="user_name"> '+item.fullname+' <span> '+item.video_created_date+' </span> </p><p>  '+sangu+' <span class="competition"> '+item.channel+' </span> </p><p></p></div><div class="member_like"><p> <span id="chlike_'+item.video_id+'">'+item.total_like+' </span> likes </p></div><div class="comment_detail"><p class="revine"><span id="chvine_'+item.video_id+'"> '+item.total_vine+' </span> resedio</p><div class="comment_but"><div class="comment_but_left"><ul><li style="padding:0;"> <a href="javascript:void(0);"> <img id="likebutton_'+item.video_id+'" src="'+likeimage+'" width="80" height="30" onclick="fun_likebt('+item.video_id+')"> </a> </li><li id="postvine" style="padding:0 5px 0 15px!important;"><img id="vinebutton_'+item.video_id+'" src="'+vineimage+'" onclick="fun_vinebt('+item.video_id+')"></li><li> <a href="javascript:void(0);"> <img src="assets/img/comment.png" onclick="fun_profile_comment('+getValue("user_id")+','+item.video_id+','+1+')"> </a> </li></ul></div><div class="comment_but_right"><a href="#"> <img src="assets/img/grey_square_but_3.png" onclick="moreoption('+item.video_id+','+fb+')"> </a></div></div></div></div></div></div></div></div>';
+  				
+  			
+                  // var feed='<div class="container margin-top:-4px;"><div class="row-fluid"><div class="span12"><div><video id="video" height:270; width="100%" loop poster="'+item.video_poster+'" ><source src="'+item.video_name+'"/></video></div><div class="span12 user1"><div class="user_img"><img src="'+item.profile_image+'" id="otherid'+item.user_id+'" onclick="profile1('+item.user_id+','+userid+','+1+')"></div><div class="user_right"><div class="user_detail" id="users"><p class="user_name"> '+item.fullname+' <span> '+item.video_created_date+' </span> </p><p>  '+sangu+' <span class="competition"> '+item.channel+' </span> </p><p></p></div><div class="member_like">'+lik+'</div><div class="comment_detail">'+vin+'<div class="comment_but"><div class="comment_but_left"><ul id="ul_id" class="unoslider"><li id="vine_hide1_'+item.user_id+'" style="padding:0;"> <a href="javascript:void(0);"> <img id="likebutton_'+item.video_id+'" src="'+likeimage+'" width="80" height="30" onclick="fun_likebt('+item.video_id+')"> </a> </li><a href="javascript:void(0);"> <li id="vine_hide2_'+item.user_id+'" style="padding:0 5px 0 15px!important;border:none!important;"><img id="vinebutton_'+item.video_id+'" class="revinee" style="border:none!important;" src="'+vineimage+'" onclick="fun_vinebt('+item.video_id+')"></a></li><li id="vine_hide3_'+item.user_id+'"> <a href="javascript:void(0);"> <img src="assets/img/comment.png" onclick="fun_profile_comment('+getValue("user_id")+','+item.video_id+','+1+')"> </a> </li></ul></div><div class="comment_but_right" ><img data-toggle="modal" href="#example" class="pop" id="more_'+item.video_id+'" src="assets/img/grey_square_but_3.png"  onclick="moreoption('+item.video_id+')"></div></div></div></div></div></div></div></div>';
+       
+       
+      //    var feed='<div class="container margin-top:-4px;"><div class="row-fluid"><div class="span12"><div class="big_img"><video id="video" height:270; width="100%" loop poster="'+item.video_poster+'" ><source src="'+item.video_name+'"/></video></div><div class="span12 user1"><div class="user_img"><img src="'+item.profile_image+'" id="otherid'+item.user_id+'" onclick="profile1('+item.user_id+','+userid+','+1+')"></div><div class="user_right"><div class="user_detail"><p class="user_name"> '+item.fullname+' <span> '+item.video_created_date+' </span> </p><p>  '+sangu+' <span class="competition"> '+item.channel+' </span> </p><p></p></div><div class="member_like">'+lik+'</div><div class="comment_detail">'+vin+'<div class="comment_but"><div class="comment_but_left"><ul id="ul_id" class="unoslider"><li id="vine_hide1_'+item.user_id+'" style="padding:0;"> <a href="javascript:void(0);"> <img id="likebutton_'+item.video_id+'" src="'+likeimage+'" width="80" height="30" onclick="fun_likebt('+item.video_id+')"> </a> </li><a href="javascript:void(0);"> <li id="vine_hide2_'+item.user_id+'" style="padding:0 5px 0 15px!important;border:none!important;"><img id="vinebutton_'+item.video_id+'" class="revinee" style="border:none!important;" src="'+vineimage+'" onclick="fun_vinebt('+item.video_id+')"></a></li><li id="vine_hide3_'+item.user_id+'"> <a href="javascript:void(0);"> <img src="assets/img/comment.png" onclick="fun_profile_comment('+getValue("user_id")+','+item.video_id+','+1+')"> </a> </li></ul></div><div class="comment_but_right" >'+pops+'</div></div></div></div></div></div></div></div>';
+                     
+                     var feed='<div class="container margin-top:-4px;"><div class="row-fluid"><div class="span12"><div class="big_img"><video id="example_video_1" controls preload="none" height="264" width="320" poster="'+item.video_poster+'" controls="false" autoplay="autoplay" ><source src="'+item.video_name+'"/></video></div><div class="span12 user1"><div class="user_img"><img src="'+item.profile_image+'" id="otherid'+item.user_id+'" onclick="profile1('+item.user_id+','+userid+','+1+')"></div><div class="user_right"><div class="user_detail"><p class="user_name"> '+item.fullname+' <span> '+item.video_created_date+' </span> </p><p>  '+sangu+' <span class="competition"> '+item.channel+' </span> </p><p></p></div><div class="member_like">'+lik+'</div><div class="comment_detail">'+vin+'<div class="comment_but"><div class="comment_but_left"><ul id="ul_id" class="unoslider"><li id="vine_hide1_'+item.user_id+'" style="padding:0;"> <a href="javascript:void(0);"> <img id="likebutton_'+item.video_id+'" src="'+likeimage+'" width="80" height="30" onclick="fun_likebt('+item.video_id+')"> </a> </li><a href="javascript:void(0);"> <li id="vine_hide2_'+item.user_id+'" style="padding:0 5px 0 15px!important;border:none!important;"><img id="vinebutton_'+item.video_id+'" class="revinee" style="border:none!important;" src="'+vineimage+'" onclick="fun_vinebt('+item.video_id+')"></a></li><li id="vine_hide3_'+item.user_id+'"> <a href="javascript:void(0);"> <img src="assets/img/comment.png" onclick="fun_profile_comment('+getValue("user_id")+','+item.video_id+','+1+')"> </a> </li></ul></div><div class="comment_but_right" >'+pops+'</div></div></div></div></div></div></div></div>';     
+       
+                    var post=item.video_poster;
+                      $('#v_poster').val(post);                                            
+                       
+                           $("#home_feeds").append(feed);
+                           $("#seemore").show();         
+                         
+                           count= count +1 ;
+                                          
+                              });
+                    }
+                              
+                              
+                      });
+      
+      	//$('#loader').hide();
+      	//$("#home_feeds").empty();
+      	
+           $("#loader").delay(1000).fadeOut();
+           
+      
+      }
+     
+  function likelist(vid,uid)
+{
+
+//alert(vid);
+//alert(uid);
+   Feed_native.likelist(vid,uid);
+
+} 
+
+function resediolist(vid,uid)
+{
+Feed_native.resediolist(vid,uid);
+
+}
+      
+   function getValue(varname)
+                {
+                    var url = window.location.href;
+                    var qparts = url.split("?");
+                    
+                    if (qparts.length == 1)
+                    {
+                        return "";
+                    }
+                    else{
+                        var query = qparts[1];
+                        var vars = query.split("&");
+                        var value = "";
+                        for (i=0;i<vars.length;i++)
+                        {
+                            var parts = vars[i].split("=");
+                            if (parts[0] == varname)
+                            {
+                                value = parts[1];
+                                break;
+                            }
+                        }
+                        value = unescape(value);
+                        
+                        value.replace(/\+/g," ");
+                        return value;
+                    }
+                    
+                }
+                
+  
+   function fun_likebt(like)
+  {
+  
+  var like1='#chlike_'+like;
+  
+  var like2='#likebutton_'+like;
+  var likecount='#hidelike_'+like;
+ 
+        var profileimage=$(like2).attr('src');
+        
+
+   if(profileimage=='assets/img/smile-hv.png')
+       $(like2).attr('src','assets/img/smiley.png');
+   else    
+      $(like2).attr('src','assets/img/smile-hv.png');
+
+      
+     var likeurl=''+Liveurl+'feed/likefun?v_id='+like+'&user_id='+getValue("user_id");
+              $.getJSON(likeurl, function(data){
+                      
+                      $.each(data, function(i, item){
+                      
+                           if(item.total_like==0)
+                              {
+                             
+                               $("[id^=hidelike_"+like+"]").show();
+                          // $(".user_detail").css("border-bottom","1px solid #DBDBDB");
+ 
+                          
+                              }
+                              else
+                              {
+                              
+                               $("[id^=hidelike_"+like+"]").show();
+                            
+                              //$(".user_detail").css("border","none");
+                              }
+                       $(like1).text(item.total_like); 
+                      
+                      
+                              });
+                      });
+                      
+
+  }
+  
+  
+        
+    function profile1(userid,owner)
+  {
+   
+      Feed_native.showOtherProfile(userid,owner);
+   
+  
+  }    
+  
+  function moreoption(video,desc)
+  {
+
+
+var test=video;
+
+$('#hh').val(test);
+  
+  }
+  
+        var title='';
+  
+        
+ 
+function tw_share()
+{
+
+$('#example').hide();
+$('#example1').hide();
+
+
+var vidd=($('#hh').val()); 
+//alert(vidd);
+Feed_native.Postontwitter(vidd);
+
+
+}
+ function fb_share()
+  {
+  
+  $('#example').hide();
+$('#example1').hide();
+ 
+var vidd=($('#hh').val()); 
+//alert(vidd);
+
+Feed_native.Postonfacebook(userid,vidd,title);
+
+}
+  
+function getval(){
+	var URL = Feed_native.Postonfacebook1();
+	//alert(URL);
+	/*alert("Entry to first value");
+	Feed_native.getval();
+	alert("Entry to get value");
+	alert(str);*/
+}
+
+function delete_post()
+{
+
+$('#example').hide();
+$('#example1').hide();
+
+ var vidd=($('#hh').val()); 
+//alert("delete");
+
+var delurl=''+Liveurl+'mobile/deletePost?video_id='+vidd+'&user_id='+userid;
+   console.log(delurl);
+ 
+  			             $.getJSON(delurl, function(data){
+                      
+                      $.each(data, function(i, item){
+                  
+                    // alert(item.status);
+                          
+                                 });
+                             
+                      });
+ 
+}
+ 
+function report()
+{
+
+$('#example').hide();
+$('#example1').hide();
+
+var vidd=($('#hh').val()); 
+//alert("report");
+var delurl=''+Liveurl+'mobile/reportVideo?user_id='+userid+'&video_id='+vidd;
+   console.log(delurl);
+ 
+                         $.getJSON(delurl, function(data){
+                      
+                      $.each(data, function(i, item){
+                  
+                    // alert(item.success);
+                                 });
+                             
+                      });
+
+}
+
+  function fun_vinebt(vine)
+  {
+  
+  var vine1='#chvine_'+vine;
+  
+  var vine2='#vinebutton_'+vine;
+  var vinecount='#resedio_'+vine;
+
+        var profileimage=$(vine2).attr('src');
+        
+     
+   if(profileimage=='assets/img/suffle-hv.png')
+       $(vine2).attr('src','assets/img/shuffle.png');
+   else    
+      $(vine2).attr('src','assets/img/suffle-hv.png');
+
+      
+     var vineurl=''+Liveurl+'feed/vine?v_id='+vine+'&user_id='+getValue("user_id");
+              $.getJSON(vineurl, function(data){
+                      
+                      $.each(data, function(i, item){
+                 if(item.total_vine==0)
+                              {
+                               $("[id^=resedio_"+vine+"]").hide();
+                          
+                           //$(".member_like").css("border-bottom","1px solid #DBDBDB");
+                              }
+                              else
+                              {
+                               $("[id^=resedio_"+vine+"]").show();
+                            //  $(".member_like").css("border","none");
+ 
+                          
+                              }
+                       $(vine1).text(item.total_vine); 
+                      
+                      
+                              });
+                      });
+                      
+
+      var posts=''+Liveurl+'feed/get_feed?user_id='+getValue("user_id")+'&fb_token='+getValue("fb_token");
+  		           
+  		           
+              				             $.getJSON(posts, function(data){
+                      
+                      $.each(data, function(i, item){
+                      
+                     
+                      if(vine1==item.v_id)
+                        {
+                        
+                                       $(vine1).text(item.total_vine);                  
+                        } 
+                      
+                                 }); 
+                             
+                      });
+
+  }
+   
+       
+       function fun_profile_comment(userid,vid,backvalue)
+      {
+         Feed_native.commentpage(userid,vid);
+      
+      } 
+      
+      
+                
+    </script>
+
+  </body>
+</html>
+
+

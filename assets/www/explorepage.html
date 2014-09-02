@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Activity</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146052-10']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar" font-size:100%;>
+
+    <!-- Top menu -->
+    
+  <!--  <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+         
+        
+			<div class="row-fluid">
+            <div class="span12">
+            <div class="header">
+            <div class="header_left explore_logo">
+            <div class="span6">
+            <a href="#"><img src="assets/img/logo.png"></a>
+            </div>
+            </div>
+            <div class="header_right explore_right">
+            <div class="span6">
+            <ul>
+            <li>
+            <div class="in_search">
+            <a href="#"> <img src="assets/img/search_icon.png"> </a>
+            </div>
+            </li>
+            <li class="explore_cancel">
+            <a href="#"> <img src="assets/img/stop_play.png"> </a>
+            </li>            
+            </ul>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+          
+          
+        </div>
+      </div>
+    </div> -->
+    
+    <!-- Top menu -->
+    
+    <!-- sub menu -->
+<!--
+<div class="container-fluid" style="margin-bottom:6px;">
+<div class="row-fluid">
+<div class="span12">
+<div class="sub_header">
+<ul>
+<li style="padding:0;">
+<a href="homepage.html"  > feed </a>
+</li>
+<li>
+<a href="activity.html"> activity </a>
+</li>
+<li>
+<a href="explore.html" class="menu_active" style="padding:15px 20px 15px 20px;"> explore </a>
+</li>
+<li>
+<a href="profilepage.html"> profile </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+-->
+    <!-- sub menu -->
+    
+    <!-- people & tag -->
+    <!--
+<div class="container-fluid contain">
+<div class="row-fluid">
+
+<div class="span12">
+<div class="lef">
+<div class="peple">
+<img style="height:20px;" src="assets/img/star_1.png">
+<p>Popular Now</p>
+</div>
+<div class="tg">
+ <img style="height:20px;" src="assets/img/top_arw.png">
+ <p>ON THE RISE</p>
+</div>
+</div>
+<p align="center" class="channel">Channels</p>
+</div>
+  
+</div>  
+</div>  
+	 -->
+	<!-- people & tag -->
+    
+                <!-- users -->
+                
+                <div style="height:10px;">&nbsp;</div>
+               
+<div class="maintain container-fluid">
+<div class="row-fluid ">
+<div class="span12">
+<div class="user_exp">
+<div style="background-color:#ef5282;" class="user_feed_left" onclick="searchcomedy('comedy');">
+<img class="img-pad" src="assets/img/main_1.png">
+<div class="actvity_right">
+<span>Comedy</span>
+</div></div>
+</div>
+<div class="user_exp">
+<div style="background-color:#ffba4d;" class="user_feed_left" onclick="searchart('Art & Experimental');">
+<img class="img-pad" src="assets/img/main_2.png">
+<div class="actvity_right">
+<span>Art & Experimental</span></div>
+</div>
+</div>
+<div class="user_exp">
+<div style="background-color:#4681cf;" class="user_feed_left" onclick="searchcats('cats');">
+<img class="img-pad" src="assets/img/main_3.png">
+<div class="actvity_right">
+<span>Cats</span></div>
+</div>
+</div>
+<div class="user_exp">
+<div style="background-color:#7859b0;" class="user_feed_left" onclick="searchdogs('Dogs');">
+<img class="img-pad" src="assets/img/main_4.png">
+<div class="actvity_right">
+<span>Dogs </span></div>
+</div>
+</div>
+<div class="user_exp">
+<div style="background-color:#8db7c9;" class="user_feed_left" onclick="searchfamily('Family');">
+<img class="img-pad" src="assets/img/main_5.png">
+<div class="actvity_right">
+<span>Family </span></div>
+</div>
+</div>
+<div class="user_exp">
+<div style="background-color:#ff98a7;" class="user_feed_left" onclick="searchbeauty('Beauty & Fashion');">
+<img class="img-pad" src="assets/img/main_6.png">
+<div class="actvity_right">
+<span>Beauty & Fashion</span></div>
+</div>
+</div>
+<div class="user_exp">
+<div style="background-color:#f84e5d;" class="user_feed_left" onclick="searchfood('Food');">
+<img class="img-pad" src="assets/img/main_7.png">
+<div class="actvity_right">
+<span>Food </span></div>
+</div>
+</div>
+<div class="user_exp">
+<div style="background-color:#6ec4e8;" class="user_feed_left" onclick="searchhealth('Health & Fitness');">
+<img class="img-pad" src="assets/img/main_8.png">
+<div class="actvity_right">
+<span>Health & Fitness</span></div>
+</div>
+</div>
+<div class="user_exp">
+<div style="background-color:#ff6f49;" class="user_feed_left" onclick="searchnatural('Nature');">
+<img class="img-pad" src="assets/img/main_9.png">
+<div class="actvity_right">
+<span>Natural</span></div>
+</div>
+</div>
+<div class="user_exp">
+<div style="background-color:#54c5b4;" class="user_feed_left" onclick="searchmusic('Music');">
+<img class="img-pad" src="assets/img/main_10.png">
+<div class="actvity_right">
+<span>Music</span></div>
+</div>
+</div>
+<div class="user_exp">
+<div style="background-color:#ff9951;" class="user_feed_left" onclick="searchnews('News & Politics');">
+<img class="img-pad" src="assets/img/main_11.png">
+<div class="actvity_right">
+<span>News & Politics  </span></div>
+</div>
+</div>
+<div class="user_exp">
+<div style="background-color:#535f8b;" class="user_feed_left" onclick="searchspl('Special FX');">
+<img class="img-pad" src="assets/img/main_12.png">
+<div class="actvity_right">
+<span>Special FX  </span></div>
+</div>
+</div>
+<div class="user_exp">
+<div style="background-color:#5cb65e;" class="user_feed_left" onclick="searchsports('Sports');">
+<img class="img-pad" src="assets/img/main_13.png">
+<div class="actvity_right">
+<span>Sports </span></div>
+</div>
+</div>
+<div class="user_exp">
+<div style="background-color:#d356b1;" class="user_feed_left" onclick="searchurban('Urban');">
+<img class="img-pad" src="assets/img/main_14.png">
+<div class="actvity_right">
+<span>Urban </span></div>
+</div>
+</div>
+<div class="user_exp">
+<div style="background:url(assets/img/cmt_lastt.png) repeat-x;" class="user_feed_left" onclick="searchwired('Wired');">
+<img class="img-pad" src="assets/img/123.png">
+<div class="actvity_right">
+<span>Wierd</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+    
+    <!-- users -->
+    
+    
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/bootstrap-affix.js"></script>
+
+    <script src="assets/js/holder/holder.js"></script>
+    <script src="assets/js/google-code-prettify/prettify.js"></script>
+
+    <script src="assets/js/application.js"></script>
+
+
+    <!-- Analytics
+    ================================================== -->
+    <script>
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+
+  </body>
+  
+  
+     <script type="text/javascript">
+   
+  function searchcomedy(catagory)
+  {
+  //    window.location.href='searchscreen.html?user_id='+getValue("user_id")+'&fb_token='+getValue("user_id")+'&catagory='+catagory;
+  
+    Explore_native.AndroidHTMLActivitycomedy(catagory);
+  
+  }
+  
+    function searchart(catagory)
+  {
+  //    window.location.href='searchscreen.html?user_id='+getValue("user_id")+'&fb_token='+getValue("user_id")+'&catagory='+catagory;
+  
+    Explore_native.AndroidHTMLActivityart(catagory);
+  
+  }
+  
+    function searchcats(catagory)
+  {
+  //    window.location.href='searchscreen.html?user_id='+getValue("user_id")+'&fb_token='+getValue("user_id")+'&catagory='+catagory;
+  
+    Explore_native.AndroidHTMLActivitycats(catagory);
+  
+  }
+  
+     function searchdogs(catagory)
+  {
+  //    window.location.href='searchscreen.html?user_id='+getValue("user_id")+'&fb_token='+getValue("user_id")+'&catagory='+catagory;
+  
+    Explore_native.AndroidHTMLActivitydogs(catagory);
+  
+  }
+  
+     function searchfamily(catagory)
+  {
+  //    window.location.href='searchscreen.html?user_id='+getValue("user_id")+'&fb_token='+getValue("user_id")+'&catagory='+catagory;
+  
+    Explore_native.AndroidHTMLActivityfamily(catagory);
+  
+  }
+  
+     function searchbeauty(catagory)
+  {
+  //    window.location.href='searchscreen.html?user_id='+getValue("user_id")+'&fb_token='+getValue("user_id")+'&catagory='+catagory;
+  
+    Explore_native.AndroidHTMLActivitybeauty(catagory);
+  
+  }
+  
+     function searchfood(catagory)
+  {
+  //    window.location.href='searchscreen.html?user_id='+getValue("user_id")+'&fb_token='+getValue("user_id")+'&catagory='+catagory;
+  
+    Explore_native.AndroidHTMLActivityfood(catagory);
+  
+  }
+  
+     function searchhealth(catagory)
+  {
+  //    window.location.href='searchscreen.html?user_id='+getValue("user_id")+'&fb_token='+getValue("user_id")+'&catagory='+catagory;
+  
+    Explore_native.AndroidHTMLActivityhealth(catagory);
+  
+  }
+  
+     function searchnatural(catagory)
+  {
+  //    window.location.href='searchscreen.html?user_id='+getValue("user_id")+'&fb_token='+getValue("user_id")+'&catagory='+catagory;
+  
+    Explore_native.AndroidHTMLActivitynature(catagory);
+  
+  }
+  
+     function searchmusic(catagory)
+  {
+  //    window.location.href='searchscreen.html?user_id='+getValue("user_id")+'&fb_token='+getValue("user_id")+'&catagory='+catagory;
+  
+    Explore_native.AndroidHTMLActivitymusic(catagory);
+  
+  }
+  
+  
+     function searchnews(catagory)
+  {
+  //    window.location.href='searchscreen.html?user_id='+getValue("user_id")+'&fb_token='+getValue("user_id")+'&catagory='+catagory;
+  
+    Explore_native.AndroidHTMLActivitynews(catagory);
+  
+  }
+  
+     function searchspl(catagory)
+  {
+  //    window.location.href='searchscreen.html?user_id='+getValue("user_id")+'&fb_token='+getValue("user_id")+'&catagory='+catagory;
+  
+    Explore_native.AndroidHTMLActivityspl(catagory);
+  
+  }
+  
+  
+     function searchsports(catagory)
+  {
+  //    window.location.href='searchscreen.html?user_id='+getValue("user_id")+'&fb_token='+getValue("user_id")+'&catagory='+catagory;
+  
+    Explore_native.AndroidHTMLActivitysports(catagory);
+  
+  }
+  
+     function searchurban(catagory)
+  {
+  //    window.location.href='searchscreen.html?user_id='+getValue("user_id")+'&fb_token='+getValue("user_id")+'&catagory='+catagory;
+  
+    Explore_native.AndroidHTMLActivityurban(catagory);
+  
+  }
+  
+     function searchwired(catagory)
+  {
+  //    window.location.href='searchscreen.html?user_id='+getValue("user_id")+'&fb_token='+getValue("user_id")+'&catagory='+catagory;
+  
+    Explore_native.AndroidHTMLActivitywired(catagory);
+  
+  }
+  
+  
+  
+ function getValue(varname)
+                {
+                    var url = window.location.href;
+                    var qparts = url.split("?");
+                    
+                    if (qparts.length == 1)
+                    {
+                        return "";
+                    }
+                    else{
+                        var query = qparts[1];
+                        var vars = query.split("&");
+                        var value = "";
+                        for (i=0;i<vars.length;i++)
+                        {
+                            var parts = vars[i].split("=");
+                            if (parts[0] == varname)
+                            {
+                                value = parts[1];
+                                break;
+                            }
+                        }
+                        value = unescape(value);
+                        
+                        value.replace(/\+/g," ");
+                        return value;
+                    }
+                    
+                }
+
+</script>
+  
+  
+  
+  
+  
+  
+</html>

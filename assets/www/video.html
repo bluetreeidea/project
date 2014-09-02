@@ -1,0 +1,217 @@
+<html>
+<Head>
+<title>
+
+Vine Clone 
+
+  </title>
+   <script type="text/javascript" charset="utf-8" src="cordova-2.7.0.js"></script>
+            <script type="text/javascript" charset="utf-8"></script>
+            <script src="jquery.min.js" type="text/javascript"></script>
+              <script src="jquery-1.9.1.js"></script>
+             <script type="text/javascript" charset="utf-8" src="jsOAuth.min.js"></script>
+            <script src="facebook_js_sdk.js"></script>
+              <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+            <script src="cdv-plugin-fb-connect.js"></script>
+  </Head>
+   <body onload>
+  <center>
+  <br><br>
+  <h2> Vine Clone</h2><input type="button" value="Back" id="bck" onclick="back()"/>
+
+  <div class="span6 feed_img">
+                    <img id="smallimage" style="width: 200px; height: 200px;" src="https://encrypted-tbn3.gstatic.com//images?q=tbn:ANd9GcSfxTlELwssbRoLc_5btonEnLGQ1q3XfzfZhR6HTX-mZ5nnYba6"/>
+                </div>
+<div class="category" id="drop">
+<select id="list" select type="board">
+<option>Comedy</option>
+<option>Art & Experimental</option>
+<option>Cats</option>
+<option>Dogs</option>
+<option>Family</option>
+<option>Beauty & Fashion</option>
+<option>Food</option>
+<option>Health & Fitness</option>
+<option>Nature</option>
+<option>Music</option>
+<option>News & Politics</option>
+<option>Special FX</option>
+<option>Sports</option>
+<option>Urban</option>
+<option>Wired</option>
+</select>
+<br><br>
+  	Title :<input id="txtfbshare" type="text" placeholder="Enter your title"> </br></br>	
+    <label> Post to vine </label> <img src="assets/img/offbt.png" id="vinee" onclick="vine();" width="50" height="15"/></br></br>	
+  <label>Share to facebook</label> <img src="assets/img/offbt.png" id="image_facebook" onclick="facebook();"width="50" height="15"/></br></br>	
+  <label>Share to twitter</label> <img src="assets/img/offbt.png"  id="twitters" onclick="twitter();" width="50" height="15"/></br></br>	
+  <input type="button" id="save" value="Save" width="250" height="35" onclick="save();"> 
+  
+  </center>
+  
+  <script>
+   var facebook_currentstatus = 'no';
+      var vine_currentstatus = 'no';
+         var twitter_currentstatus = 'no';
+         
+         var title="";
+              //var Liveurl = window.localStorage.getItem("liveurl");
+            //  var Liveurl ='http://demo.cogzideltemplates.com/client/vine-clone/';
+         var Liveurl=Feed_native.Postonfacebook1();
+             var userid=getValue("user_id");
+         
+     function facebook()
+                {
+                    var velmain = document.getElementById('image_facebook');
+                    
+                    if (velmain.src.match("onbt"))
+                    {
+                        velmain.src="assets/img/offbt.png";
+                        facebook_currentstatus = "no";
+                        
+                    }else if (velmain.src.match("offbt"))
+                    {   
+                            velmain.src="assets/img/onbt.png";
+                          facebook_currentstatus = "yes";  
+                    }else{
+                        
+                    }
+                }
+                function vine()
+                {
+                var velmain = document.getElementById('vinee');
+                    
+                    if (velmain.src.match("onbt"))
+                    {
+                        velmain.src="assets/img/offbt.png";
+                        vine_currentstatus = "no";
+                        
+                    }else if (velmain.src.match("offbt"))
+                    {   
+                            velmain.src="assets/img/onbt.png";
+                          vine_currentstatus = "yes";  
+                    }else{
+                        
+                    }
+                }
+                function twitter()
+                {
+                var velmain = document.getElementById('twitters');
+                    
+                    if (velmain.src.match("onbt"))
+                    {
+                        velmain.src="assets/img/offbt.png";
+                        twitter_currentstatus = "no";
+                        
+                    }else if (velmain.src.match("offbt"))
+                    {   
+                            velmain.src="assets/img/onbt.png";
+                          twitter_currentstatus = "Yes";  
+                    }else{
+                        
+                    }
+                }
+                
+                function save()
+                {
+               title=document.getElementById("txtfbshare").value;
+               
+              /* if(facebook_currentstatus=='yes')
+               {
+               
+               fb_share();
+               
+               } */
+     
+     var channel = $("#list :selected").text();
+     
+               
+               
+                              
+                var addfeedurl=''+Liveurl+'feed/video_upload?user_id='+getValue("user_id")+'&title='+title+'&url=https://encrypted-tbn3.gstatic.com//images?q=tbn:ANd9GcSfxTlELwssbRoLc_5btonEnLGQ1q3XfzfZhR6HTX-mZ5nnYba6&channel='+channel+'&post_to_vine='+vine_currentstatus+'&post_to_fb='+facebook_currentstatus+'&post_to_tw='+twitter_currentstatus;
+                 $.getJSON(addfeedurl, function(data){
+                      
+                      $.each(data, function(i, item){
+                      
+                         alert(item.status);
+                                                   window.location.href='homescreen.html?user_id='+getValue("user_id")+'&fb_token='+getValue("fb_token");
+                         
+                         
+                              });
+                      });
+                      
+                      
+                
+                
+                
+                }
+                
+  function fb_share()
+  {
+     alert(getValue("vidz"));        
+    alert(document.getElementById("txtfbshare").value);
+   var fbshareurl=''+Liveurl+'feed/fbshare?v_id='+getValue("vidz")+'&token='+getValue("fb_token")+'&description='+document.getElementById("txtfbshare").value;
+   
+   console.log(fbshareurl);
+ 
+  			             $.getJSON(fbshareurl, function(data){
+                      
+                      $.each(data, function(i, item){
+                      
+                     alert(item.status);
+                     
+                
+                                 });
+                             
+                      });
+
+
+  
+ }                
+ function getValue(varname)
+                {
+                    var url = window.location.href;
+                    var qparts = url.split("?");
+                    
+                    if (qparts.length == 1)
+                    {
+                        return "";
+                    }
+                    else{
+                        var query = qparts[1];
+                        var vars = query.split("&");
+                        var value = "";
+                        for (i=0;i<vars.length;i++)
+                        {
+                            var parts = vars[i].split("=");
+                            if (parts[0] == varname)
+                            {
+                                value = parts[1];
+                                break;
+                            }
+                        }
+                        value = unescape(value);
+                        
+                        value.replace(/\+/g," ");
+                        return value;
+                    }
+                    
+                }
+                                 function load()
+                {
+                  smallimage.src="http://getdesign.org/wp-content/uploads/2013/05/cat-wallpaper-free-download-8796.jpg";
+                
+                
+                
+                }
+                
+                function back()
+                {
+                var profileback=3;
+      if(getValue("back_value")==1)
+      window.location.href='homescreen.html?user_id='+getValue("user_id");
+      else if(getValue("back_value")==2)
+            window.location.href='profilescreen.html?user_id='+getValue("user_id")+'&profile_back='+profileback;
+                }
+  </script>
+  <html>
